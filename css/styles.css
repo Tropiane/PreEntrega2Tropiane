@@ -1,12 +1,91 @@
-body {
-  background-color: #000000;
-}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
-h1 {
-  color: #D7F9F1;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-}
+body {
+  background-color: #857f7f; }
+  body h1 {
+    color: #303d3a;
+    display: flex;
+    align-items: center;
+    justify-content: right; }
+  body nav ul {
+    text-decoration: none;
+    list-style: none; }
+    body nav ul li a {
+      text-decoration-line: none; }
+  body section main .tarjeta {
+    height: 200px;
+    width: auto; }
+    body section main .tarjeta h3 {
+      text-align: center; }
+    body section main .tarjeta ul {
+      list-style: none; }
+      body section main .tarjeta ul li {
+        text-align: left; }
+
+.tarjeta {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: #DDEAF8; }
+
+body {
+  display: grid;
+  height: 1fr;
+  background-color: #171A21;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "titulo titulo" "nav main" "nav footer"; }
+  body #titulo {
+    grid-area: titulo;
+    background-color: blue; }
+  body nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 0px 20px;
+    background-color: aqua; }
+  body section main {
+    grid-area: main;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1, auto;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "buscador" "tarjetas"; }
+    body section main .buscador {
+      grid-area: buscador;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5px; }
+    body section main .tarjetas {
+      grid-area: tarjetas;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      margin: 4px;
+      padding: 2px;
+      flex-wrap: wrap; }
+      body section main .tarjetas .tarjeta {
+        background-color: #D9E0E7;
+        box-shadow: 10px 10px 5px 0px rgba(18, 44, 54, 0.75); }
+  body footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet; }
+    body footer ul {
+      list-style: none; }
+      body footer ul li {
+        display: inline; }
 
 /*# sourceMappingURL=styles.css.map */

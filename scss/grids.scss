@@ -1,0 +1,66 @@
+body{
+    display: grid;
+    height: 1fr;
+    background-color: #171A21;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "titulo titulo"
+    "nav main"
+    "nav footer";
+
+    #titulo{
+        grid-area: titulo;
+        background-color: blue;
+    }
+    nav{
+        grid-area: nav;
+        @include flex(row, center, center);
+        margin: 10px 10px 0px 20px;
+        background-color: aqua;
+    }
+
+    section{
+        main{
+            grid-area: main;
+            background-color: #fff;
+            display: grid;
+            grid-template-columns: 1, auto;
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas: 
+            "buscador"
+            "tarjetas"
+            ;
+            .buscador{
+                grid-area: buscador;
+                @include flex(row, center, center);
+                margin-top: 5px;
+            }
+            .tarjetas{
+                grid-area: tarjetas;
+                @include flex(row, center, center);
+                justify-content: space-between;
+                margin: 4px;
+                padding: 2px;
+                flex-wrap: wrap;
+                .tarjeta{
+                    background-color: #D9E0E7;
+                    box-shadow: 10px 10px 5px 0px rgba(18, 44, 54, 0.75);
+                }
+            }
+        }
+    }
+
+    footer{
+        grid-area: footer;
+        @include flex(row, center, center);
+        background-color: blueviolet;
+        ul{
+            list-style: none;
+            li{
+                display: inline;
+            }
+        }
+    }
+
+}
