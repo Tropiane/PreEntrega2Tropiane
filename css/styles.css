@@ -4,7 +4,7 @@
   padding: 0; }
 
 body {
-  background-color: #857f7f; }
+  background-color: #001829; }
   body h1 {
     color: #303d3a;
     display: flex;
@@ -15,15 +15,20 @@ body {
     list-style: none; }
     body nav ul li a {
       text-decoration-line: none; }
-  body section main .tarjeta {
+  body section main .tarjetas .tarjeta {
     height: 200px;
-    width: auto; }
-    body section main .tarjeta h3 {
+    width: auto;
+    box-shadow: 5px 5px 5px 0px rgba(116, 123, 126, 0.75); }
+    body section main .tarjetas .tarjeta h3 {
       text-align: center; }
-    body section main .tarjeta ul {
+    body section main .tarjetas .tarjeta ul {
       list-style: none; }
-      body section main .tarjeta ul li {
+      body section main .tarjetas .tarjeta ul li {
         text-align: left; }
+
+footer {
+  color: #ffff;
+  margin-top: 90%; }
 
 .tarjeta {
   border: 1px solid black;
@@ -34,24 +39,20 @@ body {
 body {
   display: grid;
   height: 1fr;
-  background-color: #171A21;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "titulo titulo" "nav main" "nav footer"; }
   body #titulo {
-    grid-area: titulo;
-    background-color: blue; }
+    grid-area: titulo; }
   body nav {
     grid-area: nav;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px 10px 0px 20px;
-    background-color: aqua; }
+    margin: 10px 10px 0px 20px; }
   body section main {
     grid-area: main;
-    background-color: #fff;
     display: grid;
     grid-template-columns: 1, auto;
     grid-template-rows: repeat(2, auto);
@@ -73,16 +74,12 @@ body {
       margin: 4px;
       padding: 2px;
       flex-wrap: wrap; }
-      body section main .tarjetas .tarjeta {
-        background-color: #D9E0E7;
-        box-shadow: 10px 10px 5px 0px rgba(18, 44, 54, 0.75); }
   body footer {
     grid-area: footer;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    background-color: blueviolet; }
+    align-items: center; }
     body footer ul {
       list-style: none; }
       body footer ul li {

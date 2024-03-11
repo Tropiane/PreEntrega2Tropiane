@@ -5,7 +5,7 @@
     padding: 0;
 }
 body{
-    background-color: #857f7f;
+    background-color: #001829;
     h1{
         color: #303d3a;
         display: flex;
@@ -28,20 +28,28 @@ body{
      }
      section{
         main{
-            .tarjeta{
-                height: 200px;
-                width: auto;
-                h3{
-                    text-align: center;
-                }
-                ul{
-                    list-style: none;
-                    li{
-                        text-align: left;
+            .tarjetas{
+                .tarjeta{
+                    height: 200px;
+                    width: auto;
+                    box-shadow: 5px 5px 5px 0px rgba(116, 123, 126, 0.75);
+                    h3{
+                        text-align: center;
+                    }
+                    ul{
+                        list-style: none;
+                        li{
+                            text-align: left;
+                        }
                     }
                 }
             }
+            
         }
      }
 }
 
+footer{
+    color: #ffff;
+    margin-top: 90%;
+}
