@@ -10,6 +10,13 @@ body{
 
     #titulo{
         grid-area: titulo;
+        @include flex(row, space-between, center);
+        h1{
+            @include flex(row, right, center);
+        }
+        h2{
+            align-items: start;
+        }
     }
     nav{
         grid-area: nav;
