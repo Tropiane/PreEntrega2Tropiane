@@ -13,6 +13,24 @@ const listaAlimentos = [
 ];
 const alimentoSumado = [];
 
+//Añadir info a tarjetas
+function tarjetasHtml(arr){
+    tarjetasPrueba.innerHTML = "";
+    //Si no se recibe nada, se arroja eso
+    let html;
+    for (const element of arr) {
+        html = `
+        <div id="tarjetasPrueba" class="tarjetasPrueba">
+                <h3>${element.nombre}</h3>
+                <ul>
+                    <li>Gramos: ${element.gramos}</li>
+                    <li>Calorias: ${element.calorias}</li>
+                </ul>
+            </div>
+        `;
+        tarjetasPrueba.innerHTML = tarjetasPrueba.innerHTML + html;
+    }
+}
 //Mensaje de aviso
 // alert("Antes de empezar, colocá Listo, luego abri la consola y recargá el codigo");
 
@@ -35,40 +53,31 @@ console.log(inputBuscador);
 //Funcion creada para que el cliente pueda seleccionar los alimentos y buscarlos dentro de listaAlimentos
 //Se pueden buscar de forma abreviada
 
-function alimentos(arr, nombre){
+function buscarAlimentos(arr, nombre){
     const buscar = arr.find((elemento)=> elemento.nombre.includes(nombre));
     return(buscar);
+}
+
+
+function contarCalorias (arr, nombre){
+    const buscar = arr.find((elemento)=> elemento.nombre.includes(nombre));
+    const contadorCalorias = contarCalorias + buscar.calorias;
+    return contadorCalorias;
 }
 
 
 //Añadir alimentos a "alimentoSumado"
 
 btn1.addEventListener("click", ()=>{
-    const buscar = alimentos(listaAlimentos, inputBuscador.value)
-    alimentoSumado.push(buscar.nombre)
+    const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value)
+    alimentoSumado.push(buscar)
+    tarjetasHtml(alimentoSumado)
+})
+
+btn1.addEventListener("click", ()=>{
+    const buscar = contarCalorias(listaAlimentos, inputBuscador.value)
     alimentoSumado.push(buscar.calorias)
     console.log(alimentoSumado);
 })
-console.log(alimentoSumado);
-//Contar cals
-// const cals = btn1.addEventListener("click", ()=>{
-//     const buscar = alimentos(listaAlimentos, inputBuscador.value)
-//     alimentoSumado.push(buscar.calorias)
-//     console.log(alimentoSumado);
-// })
-// Funcion flecha utilizada para sumar las calorías de los elementos agregados a alimentoSumado
-//Se utiliza el método .reduce para acumular los valores y no estén por separados como los alimentos
-// // // const totalCals = alimentoSumado.reduce((total, nombre)=>{
-// // //     const buscar = listaAlimentos.find(elemento=> elemento.nombre.includes(nombre));
-// // //     if(buscar){
-// // //         return total = total + buscar.calorias;
-// // //     }else{
-// // //         console.log("alimento no encontrado");
-// // //         return total;
-// // //     }
-    
-// // // }, 0);
-
-//Mostramos en consola el array de alimentoSumado y el total de calorías
 
 
