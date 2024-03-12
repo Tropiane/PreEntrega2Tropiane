@@ -17,40 +17,34 @@ body {
     list-style: none; }
     body nav ul li a {
       text-decoration-line: none; }
-  body section main .tarjetas .tarjeta {
-    height: 200px;
-    width: auto;
-    box-shadow: 5px 5px 5px 0px rgba(116, 123, 126, 0.75); }
-    body section main .tarjetas .tarjeta h3 {
-      text-align: center; }
-    body section main .tarjetas .tarjeta ul {
-      list-style: none; }
-      body section main .tarjetas .tarjeta ul li {
-        text-align: left; }
+  body footer {
+    color: #ffff;
+    margin-top: 90%; }
 
-footer {
-  color: #ffff;
-  margin-top: 90%; }
-
-.tarjeta {
+.tarjetas .tarjeta {
+  border-radius: 0px 0px 10px 10px;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 4px;
-  background-color: #eaf4ffb6;
-  height: 200px;
-  width: 150px;
-  list-style: none; }
-  .tarjeta h3 {
+  margin: 10px;
+  border: 2px solid black; }
+  .tarjetas .tarjeta h3 {
+    color: #fff;
     text-transform: uppercase;
-    text-align: center; }
-  .tarjeta li {
-    text-transform: uppercase;
-    margin-top: 10px;
-    list-style: none; }
+    border-bottom: 2px solid #2B303A;
+    margin: 10px; }
+  .tarjetas .tarjeta ul {
+    list-style: none;
+    padding: 5px;
+    border: 2px solid black;
+    margin: 10px; }
+    .tarjetas .tarjeta ul li {
+      color: #2B303A;
+      margin-top: 5px;
+      border-radius: 5px;
+      background-color: #DFCED5;
+      border: 1px solid black; }
 
 body {
   display: grid;

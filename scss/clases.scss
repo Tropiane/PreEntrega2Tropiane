@@ -1,22 +1,30 @@
-.tarjeta{
+.tarjetas{
+    .tarjeta{
+        border-radius: 0px 0px 10px 10px;
         display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-        border: 1px solid black;
-        border-radius: 5px;
-        padding: 4px;
-        background-color: #eaf4ffb6;
-        height: 200px;
-        width: 150px;
-        list-style: none;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 10px;
+        border: 2px solid black;
         h3{
+            color: #fff;
             text-transform: uppercase;
-            text-align: center;
+            border-bottom: 2px solid #2B303A;
+            margin: 10px;
         }
-        li{
-            text-transform: uppercase;
-            margin-top: 10px;
+        ul{
             list-style: none;
+            padding: 5px;
+            border: 2px solid black;
+            margin: 10px;
+            li{
+                color: #2B303A;
+                margin-top: 5px;
+                border-radius: 5px;
+                background-color: #DFCED5;
+                border: 1px solid black;
+            }
         }
     }
+}

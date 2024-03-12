@@ -1,7 +1,34 @@
+//Solicitamos botones
+const botones = document.querySelectorAll(".buscar button"),
+btn1 = botones[0],
+btn2 = botones[1];
 
+//Solicitamos Search
+const inputs= document.querySelectorAll(".buscar input"),
+inputBuscador = inputs[0];
+
+//Arrays alimentos
+const alimentoAñadido = [{}];
+const caloriasAlimentos = [{}];
+
+console.log(alimentoAñadido);
+console.log(caloriasAlimentos);
 //Saludo de bienvenida
 // let saludoUsuario = prompt("Ingresá tu nombre");
 
+//Array de alimentos
+const listaAlimentos = [
+    {nombre: "manzana", gramos: 100, porcion: 1, calorias: 26 },
+    {nombre: "banana", gramos: 100, porcion: 1, calorias: 89 },
+    {nombre: "arroz", gramos: 100, porcion: 1, calorias: 130 },
+    {nombre: "pollo", gramos: 100, porcion: 1, calorias: 165 },
+    {nombre: "brocoli", gramos: 100, porcion: 1, calorias: 34 },
+    {nombre: "zanahoria", gramos: 100, porcion: 1, calorias: 41 },    
+    {nombre: "huevo", gramos: 100, porcion: 1, calorias: 155 },
+    {nombre: "papas", gramos: 100, porcion: 1, calorias: 77 },
+    {nombre: "atun", gramos: 100, porcion: 1, calorias: 113 },
+    {nombre: "lechuga", gramos: 100, porcion: 1, calorias: 15 }
+];
 let saludos = [
     "¡Bienvenido de nuevo! ¡Qué gusto verte! ",
   "¡Hola de nuevo! ¡Me alegra verte! ",
@@ -26,21 +53,6 @@ let saludos = [
   saludoInicio.innerText = saludo; //+ saludoUsuario;
   //Fin saludo bienvenida
 
-  //Array de alimentos
-const listaAlimentos = [
-    {nombre: "manzana", gramos: 100, porcion: 1, calorias: 26 },
-    {nombre: "banana", gramos: 100, porcion: 1, calorias: 89 },
-    {nombre: "arroz", gramos: 100, porcion: 1, calorias: 130 },
-    {nombre: "pollo", gramos: 100, porcion: 1, calorias: 165 },
-    {nombre: "brocoli", gramos: 100, porcion: 1, calorias: 34 },
-    {nombre: "zanahoria", gramos: 100, porcion: 1, calorias: 41 },    
-    {nombre: "huevo", gramos: 100, porcion: 1, calorias: 155 },
-    {nombre: "papas", gramos: 100, porcion: 1, calorias: 77 },
-    {nombre: "atun", gramos: 100, porcion: 1, calorias: 113 },
-    {nombre: "lechuga", gramos: 100, porcion: 1, calorias: 15 }
-];
-const alimentoSumado = [];
-
 //Añadir info a tarjetas
 function tarjetasHtml(arr){
     tarjetasPrueba.innerHTML = "";
@@ -48,7 +60,7 @@ function tarjetasHtml(arr){
     let html;
     for (const element of arr) {
         html = `
-        <div class="">
+        <div id="class="tarjeta">
                 <h3>${element.nombre}</h3>
                 <ul>
                     <li>Gramos: ${element.gramos}</li>
@@ -59,25 +71,11 @@ function tarjetasHtml(arr){
         tarjetasPrueba.innerHTML = tarjetasPrueba.innerHTML + html;
     }
 }
-//Mensaje de aviso
-// alert("Antes de empezar, colocá Listo, luego abri la consola y recargá el codigo");
+
 
 //Mostramos los alimentos disponibles junto a sus calorias para que el usuario los tenga en cuenta
 console.log("Los alimentos disponibles son: ");
 let disponibles= listaAlimentos.forEach((elemento)=>(console.log("-"+elemento.nombre + "--->Calorías: " + elemento.calorias)));
-
-
-//Solicitamos botones
-const botones = document.querySelectorAll(".buscar button"),
-btn1 = botones[0],
-btn2 = botones[1];
-
-//Solicitamos Search
-const inputs= document.querySelectorAll(".buscar input");
-const inputBuscador = inputs[0];
-
-
-
 
 //Funcion creada para que el cliente pueda seleccionar los alimentos y buscarlos dentro de listaAlimentos
 //Se pueden buscar de forma abreviada
@@ -87,26 +85,19 @@ function buscarAlimentos(arr, nombre){
     return(buscar);
 }
 
-
-function contarCalorias (arr, nombre){
-    const totalCals = arr.reduce((total, nombre)=>{
-        return total = total + nombre.calorias
-     }, 0)
-}
+//Añadir alimentos a "alimentoAñadido"
 
 
-//Añadir alimentos a "alimentoSumado"
-
+//Buscar alimento
 btn1.addEventListener("click", ()=>{
     const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value)
-    alimentoSumado.push(buscar)
-    tarjetasHtml(alimentoSumado)
+    tarjetasHtml(listaAlimentos)
 })
 
 btn2.addEventListener("click", ()=>{
     const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value)
-    console.log(alimentoSumado);
+    alimentoAñadido.push(buscar)
+    caloriasAlimentos.push(buscar.calorias)
+    console.log("Los alimentos añadidos son: " + alimentoAñadido);
+    console.log("Las calorias totales son: " + caloriasAlimentos);
 })
-
-
-console.log(alimentoSumado);
