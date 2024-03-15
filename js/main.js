@@ -1,20 +1,24 @@
-//Solicitamos botones
+//Solicitamos botones para añadir a las diferentes comidas
 const botones = document.querySelectorAll(".buscar button"),
-btn1 = botones[0],
-btn2 = botones[1];
+btnBiblioteca = botones[0],
+btnDesayuno = botones[1],
+btnAlmuerzo= botones[2],
+btnMerienda = botones[3],
+btnCena = botones[4];
+
+//Boton en tarjetas
+const añadirTarjeta = document.querySelectorAll(".tarjeta"),
+ btnTarjeta= añadirTarjeta[0];
 
 //Solicitamos Search
 const inputs= document.querySelectorAll(".buscar input"),
 inputBuscador = inputs[0];
 
 //Arrays alimentos
-const alimentoAñadido = [{}];
-const caloriasAlimentos = [{}];
+const alimentoAñadido = [];
+const caloriasAlimentos = [];
 
-console.log(alimentoAñadido);
-console.log(caloriasAlimentos);
-//Saludo de bienvenida
-// let saludoUsuario = prompt("Ingresá tu nombre");
+
 
 //Array de alimentos
 const listaAlimentos = [
@@ -29,6 +33,9 @@ const listaAlimentos = [
     {nombre: "atun", gramos: 100, porcion: 1, calorias: 113 },
     {nombre: "lechuga", gramos: 100, porcion: 1, calorias: 15 }
 ];
+
+//Saludo de bienvenida
+// let saludoUsuario = prompt("Ingresá tu nombre");
 let saludos = [
     "¡Bienvenido de nuevo! ¡Qué gusto verte! ",
   "¡Hola de nuevo! ¡Me alegra verte! ",
@@ -45,7 +52,7 @@ let saludos = [
   let saludoInicio = document.querySelector("h1");
   console.log(saludoInicio.innerHTML);
 
-  let saludo = "";
+let saludo = "";
   for (let i = 0; i < 1; i++) {
      let random = Math.round(Math.random() * saludos.length)
      saludo = saludo + saludos[random]
@@ -60,22 +67,20 @@ function tarjetasHtml(arr){
     let html;
     for (const element of arr) {
         html = `
-        <div id="class="tarjeta">
+        <div class="tarjeta">
                 <h3>${element.nombre}</h3>
                 <ul>
                     <li>Gramos: ${element.gramos}</li>
                     <li>Calorias: ${element.calorias}</li>
                 </ul>
+                <button id="btnTarjeta">Agregar</button>
             </div>
         `;
         tarjetasPrueba.innerHTML = tarjetasPrueba.innerHTML + html;
     }
 }
-
-
 //Mostramos los alimentos disponibles junto a sus calorias para que el usuario los tenga en cuenta
-console.log("Los alimentos disponibles son: ");
-let disponibles= listaAlimentos.forEach((elemento)=>(console.log("-"+elemento.nombre + "--->Calorías: " + elemento.calorias)));
+tarjetasHtml(listaAlimentos)
 
 //Funcion creada para que el cliente pueda seleccionar los alimentos y buscarlos dentro de listaAlimentos
 //Se pueden buscar de forma abreviada
@@ -85,19 +90,35 @@ function buscarAlimentos(arr, nombre){
     return(buscar);
 }
 
-//Añadir alimentos a "alimentoAñadido"
+//Funcion utilizada para filtrar por cada tarjeta de alimento
+function filtroComida(arr, filtro) {
+    const filtrar = arr.filter((el) => {
+      return el.nombre.includes(filtro);
+    });
+    return filtrar;
+  }
 
+  //Creamos función para que sume las calorias de los alimentos agregados
+  function actualizarTotalCalorias() {
+    const totalCals = caloriasAlimentos.reduce((a, b) => a + b, 0);
+    console.log("Total de calorías: " + totalCals);
+}
 
 //Buscar alimento
-btn1.addEventListener("click", ()=>{
-    const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value)
-    tarjetasHtml(listaAlimentos)
-})
+inputBuscador.addEventListener("keyup", () => {
+  const filtrados = filtroComida(listaAlimentos, inputBuscador.value);
+  tarjetasHtml(filtrados);
+});
 
-btn2.addEventListener("click", ()=>{
-    const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value)
-    alimentoAñadido.push(buscar)
-    caloriasAlimentos.push(buscar.calorias)
+// Añadir alimentos a "alimentoAñadido" y actualizar el total de calorías
+btnTarjeta.addEventListener("click", () => {
+    const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value);
+    alimentoAñadido.push(buscar.nombre);
+    caloriasAlimentos.push(buscar.calorias);
     console.log("Los alimentos añadidos son: " + alimentoAñadido);
-    console.log("Las calorias totales son: " + caloriasAlimentos);
-})
+    // Actualizamos el total de calorías
+    actualizarTotalCalorias();
+});
+
+// Llamamos a la función para mostrar el total de calorías al cargar la página
+actualizarTotalCalorias();

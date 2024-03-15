@@ -29,26 +29,114 @@
         <main>
             <!-- Inicio buscador -->
     <div class="buscar">
-        <input type="text">
-        <button>Buscar</button>
-        <button>añadir</button>
-        <button>Añadir a la Merienda</button>
-        <button>Añadir a la Cena</button>
-        <button>Añadir a la biblioteca</button>
+        <input type="text" placeholder="Buscá tu alimento">
+        <button class="btnStyle">Agregar a la biblioteca</button>
+        <button btnStyle>añadir al desayuno</button>
+        <button btnStyle>Añadir al almuerzo</button>
+        <button btnStyle>Añadir a la merienda</button>
+        <button btnStyle>Añadir a la cena</button>
     </div>
     <!-- Fin Buscador -->
-   
-            <!-- Tarjetas -->
-            <div class="tarjetas">
+
+    <!-- Biblioteca y Comidas del dia -->
+    <div class="biblioteca">
+        <div class="tarjetaBiblioteca">
+            <h3>Total diario</h3>
+            <ul>
+                <li>Gramos</li>
+                <li>Calorias</li>
+                <li>
+                    <details>
+                        <summary> Otros Valores</summary>
+                        <li>
+                            
+                        </li>
+                    </details>
+                </li>
+            </ul>
+        </div>
+
+    <!-- Desayuno -->
+        <div id="tarjetaDesayuno" class="tarjetaBiblioteca">
+            <h3>Desayuno</h3>
+            <ul>
+                <li>Gramos</li>
+                <li>Calorias</li>
+                <li>
+                    <details>
+                        <summary> Otros Valores</summary>
+                        <li>
+                            
+                        </li>
+                    </details>
+                </li>
+            </ul>
+        </div>
+        
+    <!-- Almuerzo -->
+        <div id="tarjetaAlmuerzo" class="tarjetaBiblioteca">
+            <h3>Almuerzo</h3>
+            <ul>
+                <li>Gramos</li>
+                <li>Calorias</li>
+                <li>
+                    <details>
+                        <summary> Otros Valores</summary>
+                        <li>
+                            
+                        </li>
+                    </details>
+                </li>
+            </ul>
+        </div>
+
+    <!-- Merienda -->
+        <div id="tarjetaMerienda" class="tarjetaBiblioteca">
+            <h3>Merienda</h3>
+            <ul>
+                <li>Gramos</li>
+                <li>Calorias</li>
+                <li>
+                    <details>
+                        <summary> Otros Valores</summary>
+                        <li>
+                            
+                        </li>
+                    </details>
+                </li>
+            </ul>
+        </div>
+
+    <!-- Cena -->
+        <div id="tarjetaCena" class="tarjetaBiblioteca">
+            <h3>Cena</h3>
+            <ul>
+                <li>Gramos</li>
+                <li>Calorias</li>
+                <li>
+                    <details>
+                        <summary> Otros Valores</summary>
+                        <li>
+                            
+                        </li>
+                    </details>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Fin biblioteca y comidas del dia -->
+
+    <!-- Tarjetas -->
+        <div class="tarjetas">
             <div id="tarjetasPrueba" class="tarjeta">
-                <h3>title</h3>
+                <h3>Alimento</h3>
                 <ul>
-                    <li>data data data</li>
-                    <li>data data data</li>
-                    <li>data data data</li>
-                    <li>data data data</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
-            
+                <button class="btnTarjeta"></button>
             </div>
 
         </div>

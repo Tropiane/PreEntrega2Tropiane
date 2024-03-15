@@ -20,24 +20,75 @@ body {
   body footer {
     color: #ffff;
     margin-top: 90%; }
+    body footer ul {
+      list-style: none; }
+      body footer ul li {
+        display: inline; }
+
+.buscar input {
+  height: 30px;
+  border-radius: 0px 10px 10px 0px; }
+
+.btnStyle {
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  justify-content: space-between;
+  color: #fff;
+  font-weight: bold;
+  background-image: linear-gradient(#08203e, #557c93); }
+
+.btnStyle:active {
+  padding: 5px;
+  background-image: linear-gradient(#145277, #83d0cb); }
+
+.biblioteca {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .biblioteca .tarjetaBiblioteca {
+    border-radius: 10px 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
+    border: 2px solid black;
+    width: 200px;
+    height: 300px; }
+    .biblioteca .tarjetaBiblioteca h3 {
+      color: #000000;
+      text-transform: uppercase;
+      border-bottom: 2px solid #2B303A;
+      margin: 10px; }
+    .biblioteca .tarjetaBiblioteca ul {
+      list-style: none;
+      padding: 5px;
+      margin: 10px; }
+      .biblioteca .tarjetaBiblioteca ul li {
+        color: #2B303A;
+        margin-top: 5px;
+        border-radius: 5px;
+        border-bottom: 1px solid black; }
 
 .tarjetas .tarjeta {
-  border-radius: 0px 0px 10px 10px;
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 10px;
-  border: 2px solid black; }
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid white;
+  margin: 10px; }
   .tarjetas .tarjeta h3 {
     color: #fff;
+    font-size: 15px;
     text-transform: uppercase;
     border-bottom: 2px solid #2B303A;
     margin: 10px; }
   .tarjetas .tarjeta ul {
     list-style: none;
     padding: 5px;
-    border: 2px solid black;
     margin: 10px; }
     .tarjetas .tarjeta ul li {
       color: #2B303A;
@@ -49,7 +100,7 @@ body {
 body {
   display: grid;
   height: 1fr;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: 10% 90%;
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "titulo titulo" "nav main" "nav footer"; }
   body #titulo {
@@ -73,37 +124,28 @@ body {
     align-items: center;
     margin: 10px 10px 0px 20px; }
   body section main {
+    display: flex;
+    flex-direction: row;
     grid-area: main;
     display: grid;
     grid-template-columns: 1, auto;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: "buscador" "tarjetas"; }
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "biblioteca" "buscador" "tarjetas"; }
     body section main .buscador {
       grid-area: buscador;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center;
-      margin-top: 5px; }
+      align-items: center; }
     body section main .tarjetas {
-      grid-area: tarjetas;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      justify-content: space-between;
-      margin: 4px;
-      padding: 2px;
-      flex-wrap: wrap; }
+      grid-area: tarjetas; }
+    body section main .biblioteca {
+      grid-area: biblioteca; }
   body footer {
     grid-area: footer;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center; }
-    body footer ul {
-      list-style: none; }
-      body footer ul li {
-        display: inline; }
 
 /*# sourceMappingURL=styles.css.map */

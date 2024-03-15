@@ -37,6 +37,12 @@ body{
 footer{
     color: #ffff;
     margin-top: 90%;
+    ul{
+        list-style: none;
+        li{
+            display: inline;
+        }
+    }
 }
 
 }     

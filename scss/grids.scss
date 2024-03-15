@@ -1,7 +1,7 @@
 body{
     display: grid;
     height: 1fr;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: 10% 90%;
     grid-template-rows: repeat(3, auto);
     grid-template-areas: 
     "titulo titulo"
@@ -26,26 +26,26 @@ body{
 
     section{
         main{
+            display: flex;
+            flex-direction: row;
             grid-area: main;
             display: grid;
             grid-template-columns: 1, auto;
-            grid-template-rows: repeat(2, auto);
+            grid-template-rows: repeat(3, auto);
             grid-template-areas: 
+            "biblioteca"
             "buscador"
             "tarjetas"
             ;
             .buscador{
                 grid-area: buscador;
                 @include flex(row, center, center);
-                margin-top: 5px;
             }
             .tarjetas{
                 grid-area: tarjetas;
-                @include flex(row, center, center);
-                justify-content: space-between;
-                margin: 4px;
-                padding: 2px;
-                flex-wrap: wrap;
+            }
+            .biblioteca{
+                grid-area: biblioteca;
             }
         }
     }
@@ -53,12 +53,6 @@ body{
     footer{
         grid-area: footer;
         @include flex(row, center, center);
-        ul{
-            list-style: none;
-            li{
-                display: inline;
-            }
-        }
     }
 
 }

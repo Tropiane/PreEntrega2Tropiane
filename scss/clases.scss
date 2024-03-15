@@ -1,14 +1,40 @@
-.tarjetas{
-    .tarjeta{
-        border-radius: 0px 0px 10px 10px;
+
+.buscar{
+    input{
+        height: 30px;
+        border-radius: 0px 10px 10px 0px;
+    }
+}
+.btnStyle{
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: bold;
+    background-image: linear-gradient(#08203e, #557c93);
+}
+.btnStyle:active{
+    padding: 5px;
+    background-image: linear-gradient(#145277, #83d0cb);
+}
+.biblioteca{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .tarjetaBiblioteca{
+        border-radius: 10px 10px;
+        background-color: #fff;
         display: flex;
-        align-items: center;
-        flex-direction: row;
+        align-items:start;
+        flex-direction: column;
         flex-wrap: wrap;
         margin: 10px;
         border: 2px solid black;
+        width: 200px;
+        height: 300px;
         h3{
-            color: #fff;
+            color: #000000;
             text-transform: uppercase;
             border-bottom: 2px solid #2B303A;
             margin: 10px;
@@ -16,7 +42,37 @@
         ul{
             list-style: none;
             padding: 5px;
-            border: 2px solid black;
+            margin: 10px;
+            li{
+                color: #2B303A;
+                margin-top: 5px;
+                border-radius: 5px;
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+}
+
+.tarjetas{
+    .tarjeta{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-radius: 0px 0px 10px 10px;
+        border: 1px solid white;
+        margin: 10px;
+
+        h3{
+            color: #fff;
+            font-size: 15px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #2B303A;
+            margin: 10px;
+        }
+        ul{
+            list-style: none;
+            padding: 5px;
             margin: 10px;
             li{
                 color: #2B303A;
