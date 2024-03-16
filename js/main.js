@@ -1,20 +1,15 @@
 //Solicitamos botones para añadir a las diferentes comidas
 const botones = document.querySelectorAll(".buscar button"),
-btnBiblioteca = botones[0],
-btnDesayuno = botones[1],
-btnAlmuerzo= botones[2],
-btnMerienda = botones[3],
-btnCena = botones[4];
-
-//Boton en tarjetas
-const añadirTarjeta = document.querySelectorAll(".tarjeta"),
- btnTarjeta= añadirTarjeta[0];
+btnDesayuno = botones[0],
+btnAlmuerzo = botones[1],
+btnMerienda= botones[2],
+btnCena = botones[3];
 
 //Solicitamos Search
 const inputs= document.querySelectorAll(".buscar input"),
 inputBuscador = inputs[0];
 
-//Arrays alimentos
+//Arrays alimentos vacíos
 const alimentoAñadido = [];
 const caloriasAlimentos = [];
 
@@ -49,8 +44,8 @@ let saludos = [
   "¡Hola de nuevo! ¿Cómo te ha ido desde la última vez? "
   ];
   
-  let saludoInicio = document.querySelector("h1");
-  console.log(saludoInicio.innerHTML);
+let saludoInicio = document.querySelector("h1");
+console.log(saludoInicio.innerHTML);
 
 let saludo = "";
   for (let i = 0; i < 1; i++) {
@@ -59,28 +54,6 @@ let saludo = "";
   }
   saludoInicio.innerText = saludo; //+ saludoUsuario;
   //Fin saludo bienvenida
-
-//Añadir info a tarjetas
-function tarjetasHtml(arr){
-    tarjetasPrueba.innerHTML = "";
-    //Si no se recibe nada, se arroja eso
-    let html;
-    for (const element of arr) {
-        html = `
-        <div class="tarjeta">
-                <h3>${element.nombre}</h3>
-                <ul>
-                    <li>Gramos: ${element.gramos}</li>
-                    <li>Calorias: ${element.calorias}</li>
-                </ul>
-                <button id="btnTarjeta">Agregar</button>
-            </div>
-        `;
-        tarjetasPrueba.innerHTML = tarjetasPrueba.innerHTML + html;
-    }
-}
-//Mostramos los alimentos disponibles junto a sus calorias para que el usuario los tenga en cuenta
-tarjetasHtml(listaAlimentos)
 
 //Funcion creada para que el cliente pueda seleccionar los alimentos y buscarlos dentro de listaAlimentos
 //Se pueden buscar de forma abreviada
@@ -103,6 +76,46 @@ function filtroComida(arr, filtro) {
     const totalCals = caloriasAlimentos.reduce((a, b) => a + b, 0);
     console.log("Total de calorías: " + totalCals);
 }
+  //////////////////////////// No tocar nada de acá hasta la linea 141, sino se rompe todo /////////////////////////////////////////
+  //Añadir info a tarjetas
+  function tarjetasHtml(arr){
+    tarjetasPrueba.innerHTML = "";
+    let html;
+    for (const element of arr) {
+        html = `
+        <div class="tarjeta">
+            <h3>${element.nombre}</h3>
+            <ul>
+                <li>Gramos: ${element.gramos}</li>
+                <li>Calorias: ${element.calorias}</li>
+            </ul>
+            <button class="btnTarjeta">Agregar</button>
+        </div>
+        `;
+        tarjetasPrueba.innerHTML = tarjetasPrueba.innerHTML + html;
+    }
+
+    // Agregar evento de clic a los botones de las tarjetas recién creadas
+    const botonesTarjeta = document.querySelectorAll(".btnTarjeta");
+    botonesTarjeta.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const nombreAlimento = btn.parentElement.querySelector("h3").textContent;
+            const alimento = buscarAlimentos(listaAlimentos, nombreAlimento);
+            alimentoAñadido.push(alimento.nombre);
+            caloriasAlimentos.push(alimento.calorias);
+            console.log("Los alimentos añadidos son: " + alimentoAñadido);
+            // Actualizamos el total de calorías
+            actualizarTotalCalorias();
+        });
+    });
+}
+
+//Boton en tarjetas
+const añadirTarjeta = document.querySelectorAll(".tarjeta button"),
+btnEnTarjeta= añadirTarjeta[0];
+
+//Mostramos los alimentos disponibles junto a sus calorias para que el usuario los tenga en cuenta
+tarjetasHtml(listaAlimentos)
 
 //Buscar alimento
 inputBuscador.addEventListener("keyup", () => {
@@ -111,14 +124,14 @@ inputBuscador.addEventListener("keyup", () => {
 });
 
 // Añadir alimentos a "alimentoAñadido" y actualizar el total de calorías
-btnTarjeta.addEventListener("click", () => {
+btnEnTarjeta.addEventListener("click", () => {
     const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value);
     alimentoAñadido.push(buscar.nombre);
     caloriasAlimentos.push(buscar.calorias);
-    console.log("Los alimentos añadidos son: " + alimentoAñadido);
+    console.log("Los alimentos añadidos son: " + alimentoAñadido || "No existe el alimento");
     // Actualizamos el total de calorías
     actualizarTotalCalorias();
 });
 
 // Llamamos a la función para mostrar el total de calorías al cargar la página
-actualizarTotalCalorias();
+// actualizarTotalCalorias();
