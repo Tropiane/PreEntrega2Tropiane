@@ -23,3 +23,10 @@ let saludo = "";
   }
   saludoInicio.innerText = saludo //+ saludoUsuario;
   //Fin saludo bienvenida
+
+  const linkBiblioteca = document.getElementById("linkBiblioteca");
+  console.log(linkBiblioteca);
+
+  linkBiblioteca.addEventListener("click", ()=>{
+    alert("Zona en proceso de construccion")
+  })
