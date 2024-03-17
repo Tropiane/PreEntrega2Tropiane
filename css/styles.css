@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
 
 body {
   background-color: #001829; }
@@ -18,16 +19,25 @@ body {
     body nav ul li a {
       text-decoration-line: none; }
   body footer {
-    color: #ffff;
-    margin-top: 90%; }
+    color: #ffff; }
     body footer ul {
       list-style: none; }
       body footer ul li {
         display: inline; }
 
-.buscar input {
-  height: 30px;
-  border-radius: 0px 10px 10px 0px; }
+.buscar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
+  .buscar p {
+    color: #fff;
+    text-align: center;
+    width: 250px; }
+  .buscar input {
+    width: 200px;
+    height: 30px;
+    border-radius: 0px 10px 10px 0px;
+    margin: 20px 20px; }
 
 .btnStyle {
   height: 40px;
@@ -50,13 +60,12 @@ body {
     border-radius: 10px 10px;
     background-color: #fff;
     display: flex;
-    align-items: start;
     flex-direction: column;
     flex-wrap: wrap;
     margin: 10px;
     border: 2px solid black;
-    width: 200px;
-    height: 300px; }
+    width: 250px;
+    height: auto; }
     .comidasDia .tarjetaComidasDia h3 {
       color: #000000;
       text-transform: uppercase;
@@ -67,30 +76,44 @@ body {
       padding: 5px;
       margin: 10px; }
       .comidasDia .tarjetaComidasDia ul li {
+        width: 80px;
         color: #2B303A;
         margin-top: 5px;
         border-radius: 5px;
-        border-bottom: 1px solid black; }
+        border-bottom: 1px solid black;
+        flex-wrap: wrap;
+        text-transform: uppercase; }
+    .comidasDia .tarjetaComidasDia p {
+      font-size: 15px;
+      text-align: right;
+      float: right;
+      position: static; }
 
-.tarjetas .tarjeta {
+#tarjetasPrueba {
   display: flex;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap; }
+
+.tarjeta {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   border-radius: 0px 0px 10px 10px;
-  border: 1px solid white;
-  margin: 10px; }
-  .tarjetas .tarjeta h3 {
+  margin: 10px;
+  border: 1px solid white; }
+  .tarjeta h3 {
     color: #fff;
     font-size: 15px;
     text-transform: uppercase;
     border-bottom: 2px solid #2B303A;
     margin: 10px; }
-  .tarjetas .tarjeta ul {
+  .tarjeta ul {
     list-style: none;
     padding: 5px;
     margin: 10px; }
-    .tarjetas .tarjeta ul li {
+    .tarjeta ul li {
       color: #2B303A;
       margin-top: 5px;
       border-radius: 5px;
@@ -128,9 +151,9 @@ body {
     flex-direction: row;
     grid-area: main;
     display: grid;
-    grid-template-columns: 1, auto;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "biblioteca" "buscador" "tarjetas"; }
+    grid-template-columns: 20%, 80%;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "buscador tarjetas" "biblioteca tarjetas" "biblioteca tarjetas"; }
     body section main .buscador {
       grid-area: buscador;
       display: flex;

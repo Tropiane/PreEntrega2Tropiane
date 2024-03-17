@@ -1,18 +1,16 @@
-//Solicitamos botones para añadir a las diferentes comidas
-const botones = document.querySelectorAll(".buscar button"),
-btnDesayuno = botones[0],
-btnAlmuerzo = botones[1],
-btnMerienda= botones[2],
-btnCena = botones[3];
+//Boton en tarjetas
+const añadirTarjeta = document.querySelectorAll(".tarjeta button"),
+btnEnTarjeta= añadirTarjeta[0];
 
 //Solicitamos Search
 const inputs= document.querySelectorAll(".buscar input"),
-inputBuscador = inputs[0];
+inputBuscador = inputs[2];
 
 //Arrays alimentos vacíos
 const alimentoAñadido = [];
 const caloriasAlimentos = [];
-
+//Solo nombres de los alimentos
+const NalimentoAñadido = [];
 
 
 //Array de alimentos
@@ -29,33 +27,7 @@ const listaAlimentos = [
     {nombre: "lechuga", gramos: 100, porcion: 1, calorias: 15 }
 ];
 
-//Saludo de bienvenida
-// let saludoUsuario = prompt("Ingresá tu nombre");
-let saludos = [
-    "¡Bienvenido de nuevo! ¡Qué gusto verte! ",
-  "¡Hola de nuevo! ¡Me alegra verte! ",
-  "¡Qué bueno es verte de nuevo por aquí! ",
-  "¡Bienvenido de vuelta! ¿Cómo has estado? ",
-  "¡Hola otra vez! ¡Espero que estés bien! ",
-  "¡Qué alegría verte de nuevo! ¿Cómo te ha ido? ",
-  "¡Hola otra vez! ¿Cómo va todo? ",
-  "¡Bienvenido de regreso! Siempre es un placer verte. ",
-  "¡Qué bueno es tenerte de vuelta! ¿Cómo te ha tratado el tiempo? ",
-  "¡Hola de nuevo! ¿Cómo te ha ido desde la última vez? "
-  ];
-  
-let saludoInicio = document.querySelector("h1");
-console.log(saludoInicio.innerHTML);
-
-let saludo = "";
-  for (let i = 0; i < 1; i++) {
-     let random = Math.round(Math.random() * saludos.length)
-     saludo = saludo + saludos[random]
-  }
-  saludoInicio.innerText = saludo; //+ saludoUsuario;
-  //Fin saludo bienvenida
-
-//Funcion creada para que el cliente pueda seleccionar los alimentos y buscarlos dentro de listaAlimentos
+//Funcion de búsqueda de alimentos
 //Se pueden buscar de forma abreviada
 
 function buscarAlimentos(arr, nombre){
@@ -72,13 +44,18 @@ function filtroComida(arr, filtro) {
   }
 
   //Creamos función para que sume las calorias de los alimentos agregados
-  function actualizarTotalCalorias() {
-    const totalCals = caloriasAlimentos.reduce((a, b) => a + b, 0);
-    console.log("Total de calorías: " + totalCals);
+function actualizarTotalCalorias(arr) {
+    const totalCals = arr.reduce((a, b) => a + b, 0);
+    const traerP = document.getElementById("totalCalorias");
+    traerP.innerHTML = "";
+ 
+    const b = document.createElement("b");
+    b.textContent = totalCals;
+    traerP.appendChild(b);
 }
-  //////////////////////////// No tocar nada de acá hasta la linea 141, sino se rompe todo /////////////////////////////////////////
+
   //Añadir info a tarjetas
-  function tarjetasHtml(arr){
+function tarjetasHtml(arr){
     tarjetasPrueba.innerHTML = "";
     let html;
     for (const element of arr) {
@@ -101,18 +78,17 @@ function filtroComida(arr, filtro) {
         btn.addEventListener("click", () => {
           const nombreAlimento = btn.parentElement.querySelector("h3").textContent;
             const alimento = buscarAlimentos(listaAlimentos, nombreAlimento);
-            alimentoAñadido.push(alimento.nombre);
+
+            //Pusheamos los valores a los arrays correspondientes
+            NalimentoAñadido.push(alimento.nombre);
+            alimentoAñadido.push(alimento);
             caloriasAlimentos.push(alimento.calorias);
-            console.log("Los alimentos añadidos son: " + alimentoAñadido);
             // Actualizamos el total de calorías
-            actualizarTotalCalorias();
+            actualizarTotalCalorias(caloriasAlimentos);
+            mostrarAlimento(NalimentoAñadido)
         });
     });
 }
-
-//Boton en tarjetas
-const añadirTarjeta = document.querySelectorAll(".tarjeta button"),
-btnEnTarjeta= añadirTarjeta[0];
 
 //Mostramos los alimentos disponibles junto a sus calorias para que el usuario los tenga en cuenta
 tarjetasHtml(listaAlimentos)
@@ -128,10 +104,37 @@ btnEnTarjeta.addEventListener("click", () => {
     const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value);
     alimentoAñadido.push(buscar.nombre);
     caloriasAlimentos.push(buscar.calorias);
-    console.log("Los alimentos añadidos son: " + alimentoAñadido || "No existe el alimento");
     // Actualizamos el total de calorías
     actualizarTotalCalorias();
 });
 
-// Llamamos a la función para mostrar el total de calorías al cargar la página
-// actualizarTotalCalorias();
+//Mostrar alimento en tarjeta "Alimento seleccionado"
+function mostrarAlimento(arr) {
+  const traerUl = document.getElementById("ulTarjeta");
+  traerUl.innerHTML = "";
+
+  // Bucle para crear li
+  arr.forEach(alimento => {
+    const btn = document.createElement("BUTTON");
+    const btnTxt = document.createTextNode("Quitar");
+    const li = document.createElement("li");
+
+    btn.appendChild(btnTxt);
+    li.textContent = alimento;
+    traerUl.appendChild(btn);
+    traerUl.appendChild(li);
+
+   //Borrar alimento con btn
+    btn.addEventListener("click", ()=>{
+      const element = arr.indexOf(alimento);
+
+      //Eliminar elemento
+      element !== -1 && arr.splice(element, 1);
+      mostrarAlimento(NalimentoAñadido)
+
+      //Eliminar calorias
+      element !== -1 && caloriasAlimentos.splice(element, 1);
+      actualizarTotalCalorias(caloriasAlimentos)
+    });
+  });
+}

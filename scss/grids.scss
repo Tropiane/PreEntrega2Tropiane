@@ -30,12 +30,12 @@ body{
             flex-direction: row;
             grid-area: main;
             display: grid;
-            grid-template-columns: 1, auto;
-            grid-template-rows: repeat(3, auto);
+            grid-template-columns: 20%, 80%;
+            grid-template-rows: repeat(2, auto);
             grid-template-areas: 
-            "biblioteca"
-            "buscador"
-            "tarjetas"
+            "buscador tarjetas"
+            "biblioteca tarjetas"
+            "biblioteca tarjetas"
             ;
             .buscador{
                 grid-area: buscador;
