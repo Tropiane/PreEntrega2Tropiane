@@ -6,43 +6,20 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body{
-    background-color: #001829;
-    #titulo{
-        
-        h1{
-            color: rgb(185, 160, 127);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.363);
-            font-size: 18px;
-        }
-        h2{
-            color: rgb(108, 108, 241);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.596);
-        }
-    }
+    background-color: #F4F1DE;
+
     
     nav{
-        
-        ul{
-            text-decoration: none;
-            list-style: none;
-            
-            li{
-                
-                a{
-                    text-decoration-line: none;
-                }
-            }
-        }
+        border-right: 1px solid #F4F1DE;
+        background-color: #202132;
+        border-radius: 0px 10px 10px 0px;
      }
 
 footer{
-    color: #ffff;
-    ul{
-        list-style: none;
-        li{
-            display: inline;
-        }
-    }
+    background-color: #202132;
+    color: #F4F1DE;
+    border-radius: 10px 0px 0px 0px;
+    margin-top: 10px;
 }
 
 }     

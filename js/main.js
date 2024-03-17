@@ -1,10 +1,10 @@
 //Boton en tarjetas
-const añadirTarjeta = document.querySelectorAll(".tarjeta button"),
+const añadirTarjeta = document.querySelectorAll("#tarjetaAlimentos button"),
 btnEnTarjeta= añadirTarjeta[0];
 
 //Solicitamos Search
 const inputs= document.querySelectorAll(".buscar input"),
-inputBuscador = inputs[2];
+inputBuscador = inputs[0];
 
 //Arrays alimentos vacíos
 const alimentoAñadido = [];
@@ -15,17 +15,29 @@ const NalimentoAñadido = [];
 
 //Array de alimentos
 const listaAlimentos = [
-    {nombre: "manzana", gramos: 100, porcion: 1, calorias: 26 },
-    {nombre: "banana", gramos: 100, porcion: 1, calorias: 89 },
-    {nombre: "arroz", gramos: 100, porcion: 1, calorias: 130 },
-    {nombre: "pollo", gramos: 100, porcion: 1, calorias: 165 },
-    {nombre: "brocoli", gramos: 100, porcion: 1, calorias: 34 },
-    {nombre: "zanahoria", gramos: 100, porcion: 1, calorias: 41 },    
-    {nombre: "huevo", gramos: 100, porcion: 1, calorias: 155 },
-    {nombre: "papas", gramos: 100, porcion: 1, calorias: 77 },
-    {nombre: "atun", gramos: 100, porcion: 1, calorias: 113 },
-    {nombre: "lechuga", gramos: 100, porcion: 1, calorias: 15 }
+  {nombre: "manzana", gramos: 100, calorias: 26 },
+  {nombre: "banana", gramos: 100, calorias: 89 },
+  {nombre: "arroz", gramos: 100, calorias: 130 },
+  {nombre: "pollo", gramos: 100, calorias: 165 },
+  {nombre: "brocoli", gramos: 100, calorias: 34 },
+  {nombre: "zanahoria", gramos: 100, calorias: 41 },    
+  {nombre: "huevo", gramos: 100, calorias: 155 },
+  {nombre: "papas", gramos: 100, calorias: 77 },
+  {nombre: "atun", gramos: 100, calorias: 113 },
+  {nombre: "lechuga", gramos: 100, calorias: 15 },
+  {nombre: "fresas", gramos: 100, calorias: 32 },
+  {nombre: "pera", gramos: 100, calorias: 57 },
+  {nombre: "sandía", gramos: 100, calorias: 30 },
+  {nombre: "brócoli", gramos: 100, calorias: 34 },
+  {nombre: "espinacas", gramos: 100, calorias: 23 },
+  {nombre: "pepino", gramos: 100, calorias: 15 },
+  {nombre: "calabaza", gramos: 100, calorias: 26 },
+  {nombre: "melón", gramos: 100, calorias: 36 },
+  {nombre: "naranja", gramos: 100, calorias: 47 },
+  {nombre: "uvas", gramos: 100, calorias: 67 },
+  {nombre: "kiwi", gramos: 100, calorias: 61 }
 ];
+
 
 //Funcion de búsqueda de alimentos
 //Se pueden buscar de forma abreviada
@@ -56,7 +68,7 @@ function actualizarTotalCalorias(arr) {
 
   //Añadir info a tarjetas
 function tarjetasHtml(arr){
-    tarjetasPrueba.innerHTML = "";
+  tarjetaAlimentos.innerHTML = "";
     let html;
     for (const element of arr) {
         html = `
@@ -69,7 +81,7 @@ function tarjetasHtml(arr){
             <button class="btnTarjeta">Agregar</button>
         </div>
         `;
-        tarjetasPrueba.innerHTML = tarjetasPrueba.innerHTML + html;
+        tarjetaAlimentos.innerHTML = tarjetaAlimentos.innerHTML + html;
     }
 
     // Agregar evento de clic a los botones de las tarjetas recién creadas
@@ -87,6 +99,7 @@ function tarjetasHtml(arr){
             actualizarTotalCalorias(caloriasAlimentos);
             mostrarAlimento(NalimentoAñadido)
         });
+        
     });
 }
 
@@ -121,20 +134,18 @@ function mostrarAlimento(arr) {
 
     btn.appendChild(btnTxt);
     li.textContent = alimento;
-    traerUl.appendChild(btn);
-    traerUl.appendChild(li);
+    traerUl.appendChild(li), traerUl.appendChild(btn);
 
    //Borrar alimento con btn
     btn.addEventListener("click", ()=>{
       const element = arr.indexOf(alimento);
-
       //Eliminar elemento
       element !== -1 && arr.splice(element, 1);
       mostrarAlimento(NalimentoAñadido)
-
       //Eliminar calorias
       element !== -1 && caloriasAlimentos.splice(element, 1);
       actualizarTotalCalorias(caloriasAlimentos)
     });
   });
 }
+

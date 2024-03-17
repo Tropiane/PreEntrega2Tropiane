@@ -11,62 +11,64 @@
         <!-- Titulo -->
         <div id="titulo">
             <h1></h1>
-            <h2>MaxTracker</h2>
+            
+            <h2> <img src="./assets/hamburger-icon.png" alt="Icono de hamburguesa"> MaxTracker</h2>
         </div>
     
     
     <!-- Barra de navegacion -->
     <nav>
         <ul>
-            <li><a href="">page</a></li>
-            <li><a href="">page</a></li>
-            <li><a href="">page</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Biblioteca personal</a></li>
         </ul>
     </nav>
     
     <!-- Info principal y general -->
     <section>
         <main>
-            <!-- Inicio buscador -->
-    <div class="buscar">
-        <p>¿No encontras el alimento que queres?</p>
-        <p><b>Podés crearlo muy simple, ¡con los valores que vos quieras!</b></p>
-        <input type="text">
-        <input type="text">
-        <input type="text" placeholder="Buscá tu alimento">
-    </div>
-    <!-- Fin Buscador -->
+
+        <!-- Inicio Buscador -->
+            <div class="buscar">
+            <p>¡Bienvenido a la forma mas rapida de calcular las calorias de lo que vas a comer!</p>
+            <p>Simplemente <label for="buscarHtml">buscá</label> tu alimento, <span>agregalo</span> ¡y listo!</p>
+            <input type="text" placeholder="Buscá tu alimento" id="buscarHtml">
+        </div>
 
     <!-- Comidas del dia -->
     <div class="comidasDia" >
+        <p>Acá encontrás los alimentos que seleccionaste</p>
         <div class="tarjetaComidasDia" id="tarjetaSeleccionados" >
+            
             <h3>Alimentos seleccionados</h3>
             <p>Calorias:</p>
-            
             <p id="totalCalorias"><b></b></p>
             <ul id="ulTarjeta">
             <li></li>
-            </ul>
-            
+            </ul> 
         </div>
     </div>
-    <!-- comidas del dia -->
 
     <!-- Tarjetas -->
         <div class="tarjetas">
-            <div id="tarjetasPrueba" class="tarjeta">
-                <h3>Alimento</h3>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <button class="btnTarjeta">BTN en HTML</button>
+            <div id="tarjetaAlimentos" class="tarjeta">
+                
             </div>
 
         </div>
             <!-- Fin tarjetas -->
+
+            <!--crear alimento -->
+        <div class="añadirAlimento">
+        <p>¿No encontras el alimento que queres?</p>
+        <p><b>Podés crearlo muy simple, ¡con los valores que vos quieras!</b></p>
+        <input type="text" placeholder="Colocá el nombre del alimento">
+        <input type="text" placeholder="Colocá las Calorias">
+        <input type="text" placeholder="Colocá los gramos">
+        <button>Crear Alimento</button>
+        <p>recordá que esto queda guardado en tu biblioteca personal</p>
+        </div>
+
         </main>
     </section>
 

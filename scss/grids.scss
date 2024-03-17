@@ -4,7 +4,7 @@ body{
     grid-template-columns: 10% 90%;
     grid-template-rows: repeat(3, auto);
     grid-template-areas: 
-    "titulo titulo"
+    "nav titulo"
     "nav main"
     "nav footer";
 
@@ -21,7 +21,6 @@ body{
     nav{
         grid-area: nav;
         @include flex(row, center, center);
-        margin: 10px 10px 0px 20px;
     }
 
     section{
@@ -33,19 +32,22 @@ body{
             grid-template-columns: 20%, 80%;
             grid-template-rows: repeat(2, auto);
             grid-template-areas: 
-            "buscador tarjetas"
+            "biblioteca buscador"
             "biblioteca tarjetas"
-            "biblioteca tarjetas"
+            "crear tarjetas"
             ;
-            .buscador{
+            .buscar{
                 grid-area: buscador;
-                @include flex(row, center, center);
+                @include flex(column, center, center);
             }
             .tarjetas{
                 grid-area: tarjetas;
             }
             .comidasDia{
                 grid-area: biblioteca;
+            }
+            .añadirAlimento{
+                grid-area: crear;
             }
         }
     }

@@ -1,17 +1,17 @@
 //Saludo de bienvenida
 // let saludoUsuario = prompt("Ingresá tu nombre");
-let saludos = [
-    "¡Bienvenido de nuevo! ¡Qué gusto verte! ",
-  "¡Hola de nuevo! ¡Me alegra verte! ",
-  "¡Qué bueno es verte de nuevo por aquí! ",
-  "¡Bienvenido de vuelta! ¿Cómo has estado? ",
-  "¡Hola otra vez! ¡Espero que estés bien! ",
-  "¡Qué alegría verte de nuevo! ¿Cómo te ha ido? ",
-  "¡Hola otra vez! ¿Cómo va todo? ",
-  "¡Bienvenido de regreso! Siempre es un placer verte. ",
-  "¡Qué bueno es tenerte de vuelta! ¿Cómo te ha tratado el tiempo? ",
-  "¡Hola de nuevo! ¿Unas hamburguesitas o que? "
-  ];
+const saludos = [
+  "¡Hey! ¿Qué hay para el almuerzo hoy?",
+  "¡Hola! ¿Qué delicias estás planeando preparar?",
+  "¡Hola de nuevo! ¿Listo para cocinar algo delicioso?",
+  "¡Qué bueno verte! ¿Qué se está cocinando hoy?",
+  "¡Hola! ¿Qué estás pensando en disfrutar hoy?",
+  "¡Hey, hola! ¿Qué se cuece por aquí?",
+  "¡Hola! ¿Ya sabes qué te apetece para cenar?",
+  "¡Qué alegría verte! ¿Listo para satisfacer ese apetito?",
+  "¡Vos de nuevo! ¿Unas hamburguesitas o que?",
+  "¡Hey, qué tal! ¿Qué va a ser la estrella del menú hoy?",
+];
   
 let saludoInicio = document.querySelector("h1");
 console.log(saludoInicio.innerHTML);
@@ -21,5 +21,5 @@ let saludo = "";
      let random = Math.round(Math.random() * saludos.length)
      saludo = saludo + saludos[random]
   }
-  saludoInicio.innerText = saludo; //+ saludoUsuario;
+  saludoInicio.innerText = saludo //+ saludoUsuario;
   //Fin saludo bienvenida
