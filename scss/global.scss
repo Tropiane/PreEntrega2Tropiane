@@ -6,27 +6,19 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-html {
-    min-height: 100%;
-    position: relative;
-}
 body{
     margin: 0;
-    margin-bottom: 40px;
     background-color: #F4F1DE;
+    height: 100vh;
     nav{
         border-right: 1px solid #F4F1DE;
         background-color: #202132;
         border-radius: 0px 10px 10px 0px;
-        min-height: 100%;
      }
 
 footer{
     background-color: #202132;
     color: #F4F1DE;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
+    border-radius: 10px 0px 0px 0px;
 }
 }     
