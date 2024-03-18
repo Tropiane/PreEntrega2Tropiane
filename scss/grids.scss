@@ -20,7 +20,7 @@ body{
     }
     nav{
         grid-area: nav;
-        @include flex(row, center, center);
+        @include flex(column, start, center);
     }
 
     section{
