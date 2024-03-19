@@ -1,6 +1,6 @@
 
 //Traemos btn para añadir alimentos a LS
-const btns = document.querySelectorAll(".añadirAlimento button"),
+const btns = document.querySelectorAll(".añadirAlimento form button"),
 btnAgregar = btns[0];
 
 //Inputs
@@ -31,7 +31,7 @@ btnAgregar.addEventListener("click", ()=>{
     const nombre = inputNom.value;
     const gramos = parseInt(inputGr.value);
     const calorias = parseInt(inputCkal.value);
-
+    
     const nuevoAlimento = new construirAlimento(nombre, gramos, calorias);
     
     biblAlimento.push(nuevoAlimento);
@@ -42,7 +42,6 @@ btnAgregar.addEventListener("click", ()=>{
     inputNom.value = "";
     inputGr.value = "";
     inputCkal.value = "";
-    console.log(listaAlimentos);
     tarjetasHtml(listaAlimentos);
 });
 

@@ -56,14 +56,17 @@ function filtroComida(arr, filtro) {
   }
 
   //Creamos función para que sume las calorias de los alimentos agregados
-function actualizarTotalCalorias(arr) {
+  function actualizarTotalCalorias(arr) {
     const totalCals = arr.reduce((a, b) => a + b, 0);
     const traerP = document.getElementById("totalCalorias");
     traerP.innerHTML = "";
  
     const b = document.createElement("b");
+    const i = document.createElement("i");
     b.textContent = totalCals;
+    i.classList = "fa-solid fa-fire";
     traerP.appendChild(b);
+    traerP.appendChild(i)
 }
 
   //Añadir info a tarjetas

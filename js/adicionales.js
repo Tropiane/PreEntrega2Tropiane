@@ -28,5 +28,8 @@ let saludo = "";
   console.log(linkBiblioteca);
 
   linkBiblioteca.addEventListener("click", ()=>{
-    alert("Zona en proceso de construccion")
+    Swal.fire({
+      title: "Zona en proceso de construcción",
+      text: "Disculpe las molestias"
+    });
   })

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link css -->
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,8 +21,8 @@
     <!-- Barra de navegacion -->
     <nav>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#" id="linkBiblioteca">Biblioteca personal</a></li>
+            <li><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="#" id="linkBiblioteca"><i class="fa-solid fa-book"></i> Biblioteca personal</a></li>
         </ul>
     </nav>
     
@@ -42,7 +44,7 @@
             
             <h3>Alimentos seleccionados</h3>
             <p>Calorias:</p>
-            <p id="totalCalorias"><b></b></p>
+            <p id="totalCalorias" class="resaltador"><b>0</b><i class="fa-solid fa-fire"></i></p>
             <ul id="ulTarjeta">
             <li></li>
             </ul> 
@@ -69,10 +71,12 @@
         <div class="añadirAlimento">
         <p>¿No encontras el alimento que queres?</p>
         <p><b>Podés crearlo muy simple, ¡con los valores que vos quieras!</b></p>
-        <input type="text" placeholder="Colocá el nombre del alimento">
-        <input type="text" placeholder="Colocá las Calorias">
-        <input type="text" placeholder="Colocá los gramos">
-        <button>Crear Alimento</button>
+        <form action="">
+            <input type="text" placeholder="Colocá el nombre del alimento" required>
+            <input type="text" placeholder="Colocá las Calorias" required>
+            <input type="text" placeholder="Colocá los gramos" required>
+            <button>Crear Alimento</button>
+        </form>
         <p>recordá que esto queda guardado en tu biblioteca personal</p>
         </div>
 
@@ -90,7 +94,11 @@
 
 <!-- Link a main.js -->
 <script src="/js/main.js"></script>
+<!-- códigos adicionales y librerias -->
 <script src="./js/adicionales.js"></script>
+<!-- Biblioteca usuario -->
 <script src="./js/biblioteca.js"></script>
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
