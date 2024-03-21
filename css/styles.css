@@ -18,6 +18,58 @@ body {
     color: #F4F1DE;
     border-radius: 10px 0px 0px 0px; }
 
+body {
+  display: grid;
+  height: 1fr;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "nav titulo" "nav main" "nav footer"; }
+  body #titulo {
+    grid-area: titulo;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    body #titulo h1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+      align-items: center; }
+    body #titulo h2 {
+      align-items: start; }
+  body nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center; }
+  body section main {
+    display: flex;
+    flex-direction: row;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 20%, 80%;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "crear buscador" "biblioteca tarjetas" "biblioteca tarjetas"; }
+    body section main .buscar {
+      grid-area: buscador;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    body section main .tarjetas {
+      grid-area: tarjetas; }
+    body section main .comidasDia {
+      grid-area: biblioteca; }
+    body section main .añadirAlimento {
+      grid-area: crear; }
+  body footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+
 #titulo {
   border-bottom: 2px solid #202132;
   margin-bottom: 3%; }
@@ -27,51 +79,50 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 250px;
+  width: 220px;
   height: auto;
-  margin: 10px;
+  margin: 10px 5px 0px 0px;
   border-radius: 10px 10px;
   background-color: #F4F1DE;
   border: 2px solid #202132; }
 
-.tarjetas #tarjetaAlimentos {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: #202132;
-  border-radius: 30px 0px 0px 30px; }
-  .tarjetas #tarjetaAlimentos .tarjeta {
-    height: 150px;
-    width: auto;
+.tarjetas {
+  flex-wrap: wrap; }
+  .tarjetas #tarjetaAlimentos {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border: 1px solid #F4F1DE;
-    border-radius: 10px;
-    margin: 10px; }
-    .tarjetas #tarjetaAlimentos .tarjeta .btnTarjeta {
-      height: 25px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #202132;
+    border-radius: 30px 0px 0px 30px; }
+    .tarjetas #tarjetaAlimentos .tarjeta {
+      height: 150px;
       width: auto;
-      font-size: 12px;
-      border-radius: 5px;
-      color: #F4F1DE;
-      font-weight: bold;
-      background-image: linear-gradient(#08203e, #557c93);
-      transition: 0.1s; }
-    .tarjetas #tarjetaAlimentos .tarjeta .btnTarjeta:active {
-      font-size: 11px;
-      background-image: linear-gradient(#145277, #83d0cb);
-      transition: 0.2s; }
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border: 1px solid #F4F1DE;
+      border-radius: 10px;
+      margin: 10px; }
+      .tarjetas #tarjetaAlimentos .tarjeta .btnTarjeta {
+        height: 25px;
+        width: auto;
+        font-size: 12px;
+        border-radius: 5px;
+        color: #F4F1DE;
+        font-weight: bold;
+        background-image: linear-gradient(#08203e, #557c93);
+        transition: 0.1s; }
+      .tarjetas #tarjetaAlimentos .tarjeta .btnTarjeta:active {
+        font-size: 11px;
+        background-image: linear-gradient(#145277, #83d0cb);
+        transition: 0.2s; }
 
 .añadirAlimento {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  border-top: 2px solid #202132;
-  border-bottom: 2px solid #202132;
-  border-radius: 10px; }
+  align-items: center; }
   .añadirAlimento form {
     display: flex;
     flex-wrap: wrap;
@@ -134,34 +185,38 @@ nav ul {
 
 .comidasDia p {
   border: 1px solid #202132;
-  border-radius: 10px; }
-.comidasDia .tarjetaComidasDia h3 {
-  color: #202132;
-  text-transform: uppercase;
-  border-bottom: 2px solid #202132;
-  font-size: 18px; }
-.comidasDia .tarjetaComidasDia ul {
-  list-style: none;
-  padding: 5px;
-  margin: 10px; }
-  .comidasDia .tarjetaComidasDia ul li {
-    width: auto;
+  width: 250px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 14px; }
+.comidasDia .tarjetaComidasDia {
+  width: auto; }
+  .comidasDia .tarjetaComidasDia h3 {
     color: #202132;
-    margin-top: 5px;
-    border-radius: 5px 5px 5px 0px;
-    border-bottom: 1px solid #202132;
-    text-transform: uppercase; }
-  .comidasDia .tarjetaComidasDia ul button {
-    border-style: none;
-    margin-top: 0px;
-    border-radius: 0px 0px 3px 3px;
-    background-color: #202132;
-    color: #F4F1DE; }
-.comidasDia .tarjetaComidasDia p {
-  font-size: 15px;
-  text-align: right;
-  position: static;
-  border: none; }
+    text-transform: uppercase;
+    border-bottom: 2px solid #202132;
+    font-size: 18px; }
+  .comidasDia .tarjetaComidasDia ul {
+    list-style: none;
+    padding: 5px;
+    margin-top: 10px; }
+    .comidasDia .tarjetaComidasDia ul li {
+      width: auto;
+      color: #202132;
+      margin-top: 5px;
+      border-radius: 5px 5px 5px 0px;
+      border-bottom: 1px solid #202132;
+      text-transform: uppercase; }
+    .comidasDia .tarjetaComidasDia ul button {
+      border-style: none;
+      margin-top: 0px;
+      border-radius: 0px 0px 3px 3px;
+      background-color: #202132;
+      color: #F4F1DE; }
+  .comidasDia .tarjetaComidasDia p {
+    font-size: 15px;
+    text-align: right;
+    position: static; }
 
 .tarjetas #tarjetaAlimentos h3 {
   color: #F4F1DE;
@@ -180,81 +235,80 @@ nav ul {
     border-radius: 5px;
     border-bottom: 1px solid 202132; }
 
-.añadirAlimento p {
+.añadirAlimento details summary {
+  text-align: center;
+  list-style: none;
+  border: 1px solid #8789C0;
+  font-weight: bold;
+  color: #F4F1DE;
+  background-color: #202132;
+  border-radius: 10px; }
+.añadirAlimento details form {
+  border: 2px solid #202132;
+  border-radius: 12px; }
+.añadirAlimento details p {
   color: #202132;
   text-align: center;
   width: 250px;
   font-size: 13px; }
-.añadirAlimento input {
+.añadirAlimento details input {
   background: #8789c08c;
   color: #202132;
   width: 200px;
   height: 30px;
   border-radius: 0px 10px 10px 0px;
   margin: 10px 20px; }
-.añadirAlimento button {
+.añadirAlimento details button {
   width: 250px;
   border-radius: 0px 0px 10px 10px;
   color: #F4F1DE;
   font-weight: bold;
   background-image: linear-gradient(#08203e, #557c93);
   transition: 0.1s; }
+.añadirAlimento details:active {
+  border-top: 2px solid #202132;
+  border: 2px solid #202132;
+  border-radius: 10px; }
 
 footer ul {
   list-style: none; }
   footer ul li {
     display: inline; }
 
-body {
-  display: grid;
-  height: 1fr;
-  grid-template-columns: 10% 90%;
-  grid-template-rows: repeat(3, auto);
-  grid-template-areas: "nav titulo" "nav main" "nav footer"; }
-  body #titulo {
-    grid-area: titulo;
+#tituloBiblio {
+  grid-area: titulo;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  #tituloBiblio h1 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center; }
-    body #titulo h1 {
-      display: flex;
-      flex-direction: row;
-      justify-content: right;
-      align-items: center; }
-    body #titulo h2 {
-      align-items: start; }
-  body nav {
-    grid-area: nav;
+  #tituloBiblio h2 {
+    align-items: start; }
+
+#tituloBiblio {
+  border-bottom: 2px solid #202132;
+  margin-bottom: 3%; }
+  #tituloBiblio h1 {
+    color: #202132;
+    font-size: 18px; }
+  #tituloBiblio h2 {
+    color: #202132;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.596);
+    margin-right: 5px;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center; }
-  body section main {
-    display: flex;
-    flex-direction: row;
-    grid-area: main;
-    display: grid;
-    grid-template-columns: 20%, 80%;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: "biblioteca buscador" "biblioteca tarjetas" "crear tarjetas"; }
-    body section main .buscar {
-      grid-area: buscador;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; }
-    body section main .tarjetas {
-      grid-area: tarjetas; }
-    body section main .comidasDia {
-      grid-area: biblioteca; }
-    body section main .añadirAlimento {
-      grid-area: crear; }
-  body footer {
-    grid-area: footer;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; }
+    align-items: center;
+    justify-content: center; }
+    #tituloBiblio h2 a {
+      text-decoration-line: none;
+      text-decoration: none;
+      color: #202132; }
+    #tituloBiblio h2 img {
+      height: 40px;
+      background-color: #202132;
+      border-radius: 50%; }
 
 /*# sourceMappingURL=styles.css.map */

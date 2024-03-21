@@ -1,0 +1,40 @@
+//Biblioteca HTML
+//Grids
+#tituloBiblio{
+    grid-area: titulo;
+    @include flex(row, space-between, center);
+    h1{
+        @include flex(row, right, center);
+    }
+    h2{
+        align-items: start;
+    }
+}
+
+//Estilos
+#tituloBiblio{
+    border-bottom: 2px solid #202132;
+    margin-bottom: 3%;
+    h1{
+        color: #202132;
+        font-size: 18px;
+    }
+    h2{
+        color: #202132;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.596);
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a{
+            text-decoration-line: none;
+            text-decoration: none;
+            color: #202132;
+        }
+        img{
+            height: 40px;
+            background-color: #202132;
+            border-radius: 50%;
+        }
+    }
+}

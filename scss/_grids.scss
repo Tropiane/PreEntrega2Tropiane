@@ -7,7 +7,7 @@ body{
     "nav titulo"
     "nav main"
     "nav footer";
-
+    
     #titulo{
         grid-area: titulo;
         @include flex(row, space-between, center);
@@ -32,9 +32,9 @@ body{
             grid-template-columns: 20%, 80%;
             grid-template-rows: repeat(2, auto);
             grid-template-areas: 
-            "biblioteca buscador"
+            "crear buscador"
             "biblioteca tarjetas"
-            "crear tarjetas"
+            "biblioteca tarjetas"
             ;
             .buscar{
                 grid-area: buscador;

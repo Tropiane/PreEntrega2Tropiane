@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link css -->
-    <link rel="stylesheet" href="./css/styles.css">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link css -->
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
     <nav>
         <ul>
             <li><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
-            <li><a href="#" id="linkBiblioteca"><i class="fa-solid fa-book"></i> Biblioteca personal</a></li>
+            <li><a href="./html/biblioteca.html" id="linkBiblioteca"><i class="fa-solid fa-book"></i> Biblioteca personal</a></li>
         </ul>
     </nav>
     
@@ -43,8 +43,7 @@
         <div class="tarjetaComidasDia" id="tarjetaSeleccionados" >
             
             <h3>Alimentos seleccionados</h3>
-            <p>Calorias:</p>
-            <p id="totalCalorias" class="resaltador"><b>0</b><i class="fa-solid fa-fire"></i></p>
+            <p id="totalCalorias" class="resaltador"><b>Calorias 0</b> <i class="fa-solid fa-fire"></i></p>
             <ul id="ulTarjeta">
             <li></li>
             </ul> 
@@ -54,11 +53,8 @@
     <!-- Tarjetas -->
         <div class="tarjetas">
             <div id="tarjetaAlimentos" class="tarjeta">
-                <h3>Alimento</h3>
+                <h3></h3>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
                     <li></li>
                 </ul>
                 <button class="btnTarjeta"></button>
@@ -69,15 +65,19 @@
 
             <!--crear alimento -->
         <div class="añadirAlimento">
-        <p>¿No encontras el alimento que queres?</p>
-        <p><b>Podés crearlo muy simple, ¡con los valores que vos quieras!</b></p>
+            <details>
+                <summary><i class="fa-solid fa-arrow-right"></i> ¿Falta algún Alimento? <i class="fa-solid fa-arrow-left"></i></summary>
         <form action="">
+            <p>¿No encontras el alimento que queres?</p>
+        <p><b>Podés crearlo muy simple, ¡con los valores que vos quieras!</b></p>
             <input type="text" placeholder="Colocá el nombre del alimento" required>
             <input type="text" placeholder="Colocá las Calorias" required>
-            <input type="text" placeholder="Colocá los gramos" required>
+            <input type="text" placeholder="Colocá los gramos o porción" required>
             <button>Crear Alimento</button>
+            <p>¡Recordá que esto queda guardado en tu biblioteca personal!</p>
         </form>
-        <p>recordá que esto queda guardado en tu biblioteca personal</p>
+            </details>
+        
         </div>
 
         </main>

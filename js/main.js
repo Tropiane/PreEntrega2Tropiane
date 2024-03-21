@@ -15,28 +15,48 @@ const NalimentoAñadido = [];
 
 //Array de alimentos
 const listaAlimentos = [
-  {nombre: "manzana", gramos: 100, calorias: 26 },
-  {nombre: "banana", gramos: 100, calorias: 89 },
-  {nombre: "arroz", gramos: 100, calorias: 130 },
-  {nombre: "pollo", gramos: 100, calorias: 165 },
-  {nombre: "brocoli", gramos: 100, calorias: 34 },
-  {nombre: "zanahoria", gramos: 100, calorias: 41 },    
-  {nombre: "huevo", gramos: 100, calorias: 155 },
-  {nombre: "papas", gramos: 100, calorias: 77 },
-  {nombre: "atun", gramos: 100, calorias: 113 },
-  {nombre: "lechuga", gramos: 100, calorias: 15 },
-  {nombre: "fresas", gramos: 100, calorias: 32 },
-  {nombre: "pera", gramos: 100, calorias: 57 },
-  {nombre: "sandía", gramos: 100, calorias: 30 },
-  {nombre: "brócoli", gramos: 100, calorias: 34 },
-  {nombre: "espinacas", gramos: 100, calorias: 23 },
-  {nombre: "pepino", gramos: 100, calorias: 15 },
-  {nombre: "calabaza", gramos: 100, calorias: 26 },
-  {nombre: "melón", gramos: 100, calorias: 36 },
-  {nombre: "naranja", gramos: 100, calorias: 47 },
-  {nombre: "uvas", gramos: 100, calorias: 67 },
-  {nombre: "kiwi", gramos: 100, calorias: 61 }
-];
+  {nombre: "Manzana", porcion: "1 unidad mediana", calorias: 95},
+  {nombre: "Banana", porcion: "1 unidad mediana", calorias: 105},
+  {nombre: "Naranja", porcion: "1 unidad mediana", calorias: 62},
+  {nombre: "Fresa", porcion: "1 taza (144g)", calorias: 53},
+  {nombre: "Pera", porcion: "1 unidad mediana", calorias: 101},
+  {nombre: "Uva", porcion: "1 taza (92g)", calorias: 62},
+  {nombre: "Zanahoria", porcion: "1 unidad mediana", calorias: 25},
+  {nombre: "Brócoli", porcion: "1 taza (91g)", calorias: 55},
+  {nombre: "Espárrago", porcion: "1 taza (180g)", calorias: 27},
+  {nombre: "Espinaca", porcion: "1 taza (30g)", calorias: 7},
+  {nombre: "Pimiento Rojo", porcion: "1 unidad mediana", calorias: 37},
+  {nombre: "Pollo", porcion: "100g cocido", calorias: 165},
+  {nombre: "Carne de Res Magra", porcion: "100g cocida", calorias: 250},
+  {nombre: "Pavo", porcion: "100g cocido", calorias: 135},
+  {nombre: "Salmón", porcion: "100g cocido", calorias: 206},
+  {nombre: "Atún", porcion: "100g enlatado", calorias: 128},
+  {nombre: "Huevo", porcion: "1 unidad grande", calorias: 72},
+  {nombre: "Leche", porcion: "1 taza (244g)", calorias: 103},
+  {nombre: "Yogur Griego", porcion: "1 taza (245g)", calorias: 130},
+  {nombre: "Arroz Integral", porcion: "1 taza cocida (195g)", calorias: 218},
+  {nombre: "Avena", porcion: "1 taza cocida (234g)", calorias: 166},
+  {nombre: "Quinoa", porcion: "1 taza cocida (185g)", calorias: 222},
+  {nombre: "Lentejas", porcion: "1 taza cocida (198g)", calorias: 230},
+  {nombre: "Garbanzos", porcion: "1 taza cocida (164g)", calorias: 269},
+  {nombre: "Nuez", porcion: "1 onza (28g)", calorias: 185},
+  {nombre: "Almendra", porcion: "1 onza (28g)", calorias: 163},
+  {nombre: "Aguacate", porcion: "1/2 unidad mediana", calorias: 161},
+  {nombre: "Aceite de Oliva", porcion: "1 cucharada (14g)", calorias: 119},
+  {nombre: "Mantequilla de Maní", porcion: "2 cucharadas (32g)", calorias: 190},
+  {nombre: "Tofu", porcion: "100g cocido", calorias: 76},
+  {nombre: "Queso Cottage", porcion: "1 taza (226g)", calorias: 222},
+  {nombre: "Pan Integral", porcion: "1 rebanada (28g)", calorias: 69},
+  {nombre: "Pasta Integral", porcion: "1 taza cocida (140g)", calorias: 174},
+  {nombre: "Papa", porcion: "1 unidad mediana", calorias: 161},
+  {nombre: "Cebolla", porcion: "1/2 unidad mediana", calorias: 22},
+  {nombre: "Tomate", porcion: "1 unidad mediana", calorias: 22},
+  {nombre: "Calabacín", porcion: "1 taza (180g)", calorias: 19},
+  {nombre: "Hongo", porcion: "1 taza (70g)", calorias: 15},
+  {nombre: "Pepino", porcion: "1 unidad mediana", calorias: 45},
+  {nombre: "Pimiento Verde", porcion: "1 unidad mediana", calorias: 24}
+]
+;
 
 
 //Funcion de búsqueda de alimentos
@@ -63,7 +83,7 @@ function filtroComida(arr, filtro) {
  
     const b = document.createElement("b");
     const i = document.createElement("i");
-    b.textContent = totalCals;
+    b.textContent = ("Calorias " + totalCals);
     i.classList = "fa-solid fa-fire";
     traerP.appendChild(b);
     traerP.appendChild(i)
@@ -78,7 +98,7 @@ function tarjetasHtml(arr){
         <div class="tarjeta">
             <h3>${element.nombre}</h3>
             <ul>
-                <li>Gramos: ${element.gramos}</li>
+                <li>Porción: ${element.porcion}</li>
                 <li>Calorias: ${element.calorias}</li>
             </ul>
             <button class="btnTarjeta">Agregar</button>

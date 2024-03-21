@@ -27,9 +27,9 @@ let saludo = "";
   const linkBiblioteca = document.getElementById("linkBiblioteca");
   console.log(linkBiblioteca);
 
-  linkBiblioteca.addEventListener("click", ()=>{
-    Swal.fire({
-      title: "Zona en proceso de construcción",
-      text: "Disculpe las molestias"
-    });
-  })
+  // linkBiblioteca.addEventListener("click", ()=>{
+  //   Swal.fire({
+  //     title: "Zona en proceso de construcción",
+  //     text: "Disculpe las molestias"
+  //   });
+  // })

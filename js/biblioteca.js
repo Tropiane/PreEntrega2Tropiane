@@ -11,16 +11,15 @@ inputGr = buscadores[2];
 
 //Funcion constructora de objetos
 
-function construirAlimento (nombre, gramos, calorias){
+function construirAlimento (nombre, porcion, calorias){
     this.nombre = nombre;
-    this.gramos = gramos;
+    this.porcion = porcion;
     this.calorias = calorias;
 }
 
 function enviarALs(arr){
     localStorage.setItem("biblAlimentos", JSON.stringify(arr));
 }
-
 
 //Inicializamos biblioteca de Alimentos desde LocalStorage o creamos un array vacío si no existe
 const biblAlimento = JSON.parse(localStorage.getItem("biblAlimentos")) || [];
@@ -29,20 +28,16 @@ const biblAlimento = JSON.parse(localStorage.getItem("biblAlimentos")) || [];
 
 btnAgregar.addEventListener("click", ()=>{
     const nombre = inputNom.value;
-    const gramos = parseInt(inputGr.value);
+    const porcion = parseInt(inputGr.value);
     const calorias = parseInt(inputCkal.value);
     
-    const nuevoAlimento = new construirAlimento(nombre, gramos, calorias);
+    const nuevoAlimento = new construirAlimento(nombre, porcion, calorias);
     
     biblAlimento.push(nuevoAlimento);
-
     //Enviamos datos a ListaAlimento
     listaAlimentos.push(biblAlimento)
     enviarALs(biblAlimento);
-    inputNom.value = "";
-    inputGr.value = "";
-    inputCkal.value = "";
-    tarjetasHtml(listaAlimentos);
+        tarjetasHtml(listaAlimentos);
 });
 
 //Para que no se borren las tarjetas al recargar la página

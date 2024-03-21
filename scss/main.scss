@@ -1,5 +1,7 @@
 @import "global.scss";
-@import "./componentes/clases.scss";
-@import "./componentes/etiquetas.scss";
 @import "mixin.scss";
 @import "grids.scss";
+
+@import "./componentes/clases.scss";
+@import "./componentes/etiquetas.scss";
+@import "./componentes/bibliotecaHtml.scss";
