@@ -133,6 +133,10 @@ body {
   background: #FFCE47;
   border-radius: 50%; }
 
+#alimentosBiblioteca {
+  text-align: center;
+  flex-direction: row; }
+
 #titulo h1 {
   color: #202132;
   font-size: 18px; }
