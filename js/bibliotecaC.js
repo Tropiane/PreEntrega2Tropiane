@@ -14,7 +14,6 @@ const inputGr = buscadores[2];
 
 //Inicializamos biblioteca de Alimentos desde LocalStorage o creamos un array vacío si no existe
 const biblAlimento = JSON.parse(localStorage.getItem("biblAlimentos")) || [];
-console.log(biblAlimento);
 //Funcion constructora de objetos
 function construirAlimento(nombre, porcion, calorias) {
     this.nombre = nombre;
@@ -49,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const biblAlimento = JSON.parse(localStorage.getItem("biblAlimentos")) || [];
     biblAlimento.length > 0 && listaAlimentos.push(...biblAlimento);
     crearHtmlBiblio(biblAlimento);
+    tarjetasHtml(biblAlimento, );
 });
 
 // Evento para agregar alimentos
@@ -62,10 +62,9 @@ btnAgregar.addEventListener("click", () => {
     //Enviamos datos a ListaAlimento
     listaAlimentos.push(biblAlimento);
     enviarALs(biblAlimento);
-    crearHtmlBiblio(biblAlimento);
-    console.log(biblAlimento);
+    tarjetasHtml(biblAlimento, tarjetasBiblio);
 });
 enviarALs(biblAlimento);
 
-
+zonaTarjetas(tarjetasBiblio, listaAlimentos)
 

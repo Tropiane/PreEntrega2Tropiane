@@ -3,6 +3,7 @@
   const añadirTarjeta = document.querySelectorAll("#tarjetaAlimentos button");
   const btnEnTarjeta = añadirTarjeta[0];
   const tarjetaAlimentos = document.querySelector(".tarjeta");
+  const tarjetasBiblio = document.querySelector(".tarjetasBiblio");
 
   //Solicitamos Search
   const inputBuscador = document.querySelector("#buscarHtml");
@@ -16,7 +17,9 @@
   const API_URL = "../db/db.js";
 
   let listaAlimentos = [];
+    //Función para traer elementos desde DB
 
+      
   //Función de búsqueda de alimentos
   function buscarAlimentos(arr, nombre) {
       const buscar = arr.find((elemento) => elemento.nombre.includes(nombre));
@@ -42,7 +45,11 @@
       traerP.appendChild(b);
       traerP.appendChild(i);
   }
-
+  function zonaTarjetas(lugar, arr){
+    const colocar = lugar.append(tarjetasHtml(arr))
+    return colocar;
+  }
+ 
   //Añadir info a tarjetas
   function tarjetasHtml(arr) {
       tarjetaAlimentos.innerHTML = "";
@@ -79,8 +86,7 @@
       });
   }
 
-
-
+  
   //Mostrar alimento en tarjeta "Alimento seleccionado"
     function mostrarAlimento(arr) {
         const traerUl = document.getElementById("ulTarjeta");
@@ -116,13 +122,13 @@
     tarjetasHtml(filtrados);
 });
 
-  //Función para traer elementos desde DB
-  async function getData(url) {
-      const response = await fetch(url);
-      const data = await response.json();
-      listaAlimentos = data;
-      tarjetasHtml(listaAlimentos);
-  }
-  getData(API_URL);
 
 
+async function getData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    listaAlimentos = data;
+    tarjetasHtml(listaAlimentos);
+    
+}
+getData(API_URL);
