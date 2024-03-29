@@ -39,5 +39,33 @@
     }
 }
 
+#alimentosBiblioteca{
+    grid-area: main;
+    display: flex;
+    .tarjetasBiblioteca{
+        display: flex;
+        flex-direction: row;
+        ul{
+            margin: 10px;
+            padding: 5px;
+            list-style: none;
+            border: 2px solid #202132;
+            border-radius: 18px;
+            transition: 1s;
+                &:hover{
+                    transition: 1s;
+                    border: 2px solid #8789C0;
+                    border-radius: 10px 0px;
+                }
+            li{
+                text-align: left;
+            }
+            button{
+                transition: 0.5s;
+
+            }
+        }
+    }
+}
 
 

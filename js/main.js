@@ -1,12 +1,11 @@
-document.addEventListener("DOMContentLoaded", ()=>{
+
   //Boton en tarjetas
   const añadirTarjeta = document.querySelectorAll("#tarjetaAlimentos button");
   const btnEnTarjeta = añadirTarjeta[0];
   const tarjetaAlimentos = document.querySelector(".tarjeta");
 
   //Solicitamos Search
-  const inputs = document.querySelectorAll(".buscar input");
-  const inputBuscador = inputs[0];
+  const inputBuscador = document.querySelector("#buscarHtml");
 
   //Arrays alimentos vacíos
   const alimentoAñadido = [];
@@ -80,48 +79,42 @@ document.addEventListener("DOMContentLoaded", ()=>{
       });
   }
 
-  //Buscar alimento
-  inputBuscador.addEventListener("keyup", () => {
-      const filtrados = filtroComida(listaAlimentos, inputBuscador.value);
-      tarjetasHtml(filtrados);
-  });
 
-  // Añadir alimentos a "alimentoAñadido" y actualizar el total de calorías
-  btnEnTarjeta.addEventListener("click", () => {
-      const buscar = buscarAlimentos(listaAlimentos, inputBuscador.value);
-      alimentoAñadido.push(buscar.nombre);
-      caloriasAlimentos.push(buscar.calorias);
-      // Actualizamos el total de calorías
-      actualizarTotalCalorias(caloriasAlimentos);
-  });
 
   //Mostrar alimento en tarjeta "Alimento seleccionado"
-  function mostrarAlimento(arr) {
-      const traerUl = document.getElementById("ulTarjeta");
-      traerUl.innerHTML = "";
+    function mostrarAlimento(arr) {
+        const traerUl = document.getElementById("ulTarjeta");
+        traerUl.innerHTML = "";
+  
+        // Bucle para crear li
+        arr.forEach(alimento => {
+            const btn = document.createElement("button");
+            btn.textContent = "Quitar";
+            const li = document.createElement("li");
+  
+            li.textContent = alimento;
+            traerUl.appendChild(li);
+            traerUl.appendChild(btn);
+  
+            //Borrar alimento con btn
+            btn.addEventListener("click", () => {
+                const element = arr.indexOf(alimento);
+                //Eliminar elemento
+                element !== -1 && arr.splice(element, 1);
+                mostrarAlimento(NalimentoAñadido);
+                //Eliminar calorías
+                element !== -1 && caloriasAlimentos.splice(element, 1);
+                actualizarTotalCalorias(caloriasAlimentos);
+            });
+        });
+    }
 
-      // Bucle para crear li
-      arr.forEach(alimento => {
-          const btn = document.createElement("button");
-          btn.textContent = "Quitar";
-          const li = document.createElement("li");
 
-          li.textContent = alimento;
-          traerUl.appendChild(li);
-          traerUl.appendChild(btn);
-
-          //Borrar alimento con btn
-          btn.addEventListener("click", () => {
-              const element = arr.indexOf(alimento);
-              //Eliminar elemento
-              element !== -1 && arr.splice(element, 1);
-              mostrarAlimento(NalimentoAñadido);
-              //Eliminar calorías
-              element !== -1 && caloriasAlimentos.splice(element, 1);
-              actualizarTotalCalorias(caloriasAlimentos);
-          });
-      });
-  }
+  //Buscar alimento
+  inputBuscador.addEventListener("keyup", () => {
+    const filtrados = filtroComida(listaAlimentos, inputBuscador.value);
+    tarjetasHtml(filtrados);
+});
 
   //Función para traer elementos desde DB
   async function getData(url) {
@@ -131,4 +124,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
       tarjetasHtml(listaAlimentos);
   }
   getData(API_URL);
-});
+
+

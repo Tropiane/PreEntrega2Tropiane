@@ -239,37 +239,30 @@ nav ul {
     border-radius: 5px;
     border-bottom: 1px solid 202132; }
 
-.añadirAlimento details summary {
-  text-align: center;
-  list-style: none;
-  border: 1px solid #8789C0;
-  font-weight: bold;
-  color: #F4F1DE;
-  background-color: #202132;
-  border-radius: 10px; }
-.añadirAlimento details form {
+.añadirAlimento form {
   border: 2px solid #202132;
   border-radius: 12px; }
-.añadirAlimento details p {
+.añadirAlimento p {
   color: #202132;
   text-align: center;
   width: 250px;
   font-size: 13px; }
-.añadirAlimento details input {
+.añadirAlimento input {
   background: #8789c08c;
   color: #202132;
   width: 200px;
   height: 30px;
   border-radius: 0px 10px 10px 0px;
   margin: 10px 20px; }
-.añadirAlimento details button {
+.añadirAlimento button {
   width: 250px;
   border-radius: 0px 0px 10px 10px;
   color: #F4F1DE;
   font-weight: bold;
   background-image: linear-gradient(#08203e, #557c93);
   transition: 0.1s; }
-.añadirAlimento details:active {
+
+details:active {
   border-top: 2px solid #202132;
   border: 2px solid #202132;
   border-radius: 10px; }
@@ -314,5 +307,27 @@ footer ul {
       height: 40px;
       background-color: #202132;
       border-radius: 50%; }
+
+#alimentosBiblioteca {
+  grid-area: main;
+  display: flex; }
+  #alimentosBiblioteca .tarjetasBiblioteca {
+    display: flex;
+    flex-direction: row; }
+    #alimentosBiblioteca .tarjetasBiblioteca ul {
+      margin: 10px;
+      padding: 5px;
+      list-style: none;
+      border: 2px solid #202132;
+      border-radius: 18px;
+      transition: 1s; }
+      #alimentosBiblioteca .tarjetasBiblioteca ul:hover {
+        transition: 1s;
+        border: 2px solid #8789C0;
+        border-radius: 10px 0px; }
+      #alimentosBiblioteca .tarjetasBiblioteca ul li {
+        text-align: left; }
+      #alimentosBiblioteca .tarjetasBiblioteca ul button {
+        transition: 0.5s; }
 
 /*# sourceMappingURL=styles.css.map */

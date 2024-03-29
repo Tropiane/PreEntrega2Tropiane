@@ -1,5 +1,4 @@
 //Saludo de bienvenida
-// let saludoUsuario = prompt("Ingresá tu nombre");
 const saludos = [
   "¡Hey! ¿Qué hay para el almuerzo hoy?",
   "¡Hola! ¿Qué delicias estás planeando preparar?",
@@ -13,8 +12,14 @@ const saludos = [
   "¡Hey, qué tal! ¿Qué va a ser la estrella del menú hoy?",
 ];
   
-let saludoInicio = document.querySelector("h1");
-console.log(saludoInicio.innerHTML);
+const bienvenida = [
+  'bienvenido/a',
+  'a',
+  'tu',
+  'biblioteca',
+  'personal',
+];
+let saludoInicio = document.querySelector("#titulo");
 
 let saludo = "";
   for (let i = 0; i < 1; i++) {
@@ -24,8 +29,7 @@ let saludo = "";
   saludoInicio.innerText = saludo //+ saludoUsuario;
   //Fin saludo bienvenida
 
-  const linkBiblioteca = document.getElementById("linkBiblioteca");
-  console.log(linkBiblioteca);
+  // const linkBiblioteca = document.getElementById("linkBiblioteca");
 
   // linkBiblioteca.addEventListener("click", ()=>{
   //   Swal.fire({
@@ -33,3 +37,5 @@ let saludo = "";
   //     text: "Disculpe las molestias"
   //   });
   // })
+  //Traemos btn para añadir alimentos a LS
+
