@@ -45,14 +45,13 @@ function crearHtmlBiblio(arr) {
     }
     const botonesTarjetaB = document.querySelectorAll(".btnBorrarB");
     //click para borrar elementos de LS y del DOM
-    botonesTarjetaB.forEach(btn=>{
+    botonesTarjetaB.forEach((btn, index)=>{
         btn.addEventListener("click", ()=>{
             let nodoBorrar = btn.parentElement.parentElement.parentElement;
             console.log(nodoBorrar);
             if (botonTarjetaB) {
                 nodoBorrar.removeChild(btn.parentElement.parentElement);
-                biblAlimento.splice(0,1);
-                
+                biblAlimento.splice(index,1);
             }
             enviarALs(biblAlimento);
         })

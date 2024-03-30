@@ -27,7 +27,7 @@ const bienvenida = [
 for (let i = 0; i < bienvenida.length; i++) {
   setTimeout(() => {
     bienvenidaBiblio.innerText=bienvenidaBiblio.innerText + bienvenida[i] ;
-  }, i * 1000);
+  }, i * 500);
 
 }
 
