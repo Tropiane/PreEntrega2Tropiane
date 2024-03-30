@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- toastyfy -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- Link css -->
     <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
@@ -76,11 +78,12 @@
             <!--crear alimento -->
         <div class="añadirAlimento">
         <form action="">
-            
+            <p><b>¿No está el alimento que buscás?</b></p>
         <p><b>Podés crearlo muy simple, ¡con los valores que vos quieras!</b></p>
-            <input type="text" placeholder="Colocá el nombre del alimento" required>
-            <input type="text" placeholder="Colocá las Calorias" required>
-            <input type="text" placeholder="Colocá los gramos o porción" required>
+            <input type="text" placeholder="Colocá el nombre del alimento">
+            <input type="text" placeholder="Colocá las Calorias">
+            <input type="text" placeholder="Colocá los gramos o porción">
+            <p>hacé click acá para crearlo</p>
             <button id="btnAgregar">Crear Alimento</button>
             <p>¡Recordá que esto queda guardado en tu biblioteca personal!</p>
         </form>
@@ -106,5 +109,7 @@
 <script src="./js/adicionales.js"></script>
 <!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- toastyfy -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

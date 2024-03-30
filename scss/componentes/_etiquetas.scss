@@ -170,16 +170,7 @@ nav{
 
 //Creación de alimentos por el usuario
 .añadirAlimento{
-    // details{
-    //     summary{
-    //         text-align: center;
-    //         list-style: none;
-    //         border: 1px solid #8789C0;
-    //         font-weight: bold;
-    //         color: #F4F1DE;
-    //         background-color: #202132;
-    //         border-radius: 10px;
-    //     }
+        margin: 2px;
         form{
             border: 2px solid #202132;
             border-radius: 12px;
@@ -207,11 +198,6 @@ nav{
             transition: 0.1s;
         }
 
-    }
-    details:active{
-            border-top: 2px solid #202132;
-            border: 2px solid #202132;
-            border-radius: 10px;
     }
 
 
