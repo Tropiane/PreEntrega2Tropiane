@@ -37,13 +37,14 @@ function crearHtmlBiblio(arr) {
         <h3>${element.nombre}</h3>
         <li>Porcion:${element.porcion}</li>
         <li>Calorias:${element.calorias}</li>
-        <button class="btnBorrarB" class="btn btn-outline-danger">Eliminar</button>
+        <button class="btnBorrarB">Eliminar</button>
         </ul>
         </div>
         `;
         tarjetasEnBiblio.innerHTML = tarjetasEnBiblio.innerHTML + html;
     }
     const botonesTarjetaB = document.querySelectorAll(".btnBorrarB");
+    //click para borrar elementos de LS y del DOM
     botonesTarjetaB.forEach(btn=>{
         btn.addEventListener("click", ()=>{
             let nodoBorrar = btn.parentElement.parentElement.parentElement;
