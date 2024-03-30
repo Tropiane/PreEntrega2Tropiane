@@ -3,6 +3,9 @@ const btnAgregar = document.querySelector("#btnAgregar");
 
 //Traer contenedor para las tarjetas
 const tarjetasEnBiblio = document.querySelector(".tarjetasBiblioteca");
+const botonTarjetaB = document.querySelector(".tarjetasBiblioteca button");
+
+//contenedor dentro de index
 const tarjetaB = document.querySelector(".tarjetaB");
 //Inputs
 const buscadores = document.querySelectorAll(".añadirAlimento input");
@@ -11,15 +14,17 @@ const inputNom = buscadores[0];
 const inputCkal = buscadores[1];
 const inputGr = buscadores[2];
 
-
 //Inicializamos biblioteca de Alimentos desde LocalStorage o creamos un array vacío si no existe
 const biblAlimento = JSON.parse(localStorage.getItem("biblAlimentos")) || [];
+
 //Funcion constructora de objetos
 function construirAlimento(nombre, porcion, calorias) {
     this.nombre = nombre;
     this.porcion = porcion;
     this.calorias = calorias;
 }
+
+//function para crear tarjetas en Biblioteca
 function crearHtmlBiblio(arr) {
     tarjetasEnBiblio.innerHTML = "";
 
@@ -32,12 +37,25 @@ function crearHtmlBiblio(arr) {
         <h3>${element.nombre}</h3>
         <li>Porcion:${element.porcion}</li>
         <li>Calorias:${element.calorias}</li>
-        <button class="btn btn-outline-danger">Eliminar</button>
+        <button class="btnBorrarB" class="btn btn-outline-danger">Eliminar</button>
         </ul>
         </div>
         `;
         tarjetasEnBiblio.innerHTML = tarjetasEnBiblio.innerHTML + html;
     }
+    const botonesTarjetaB = document.querySelectorAll(".btnBorrarB");
+    botonesTarjetaB.forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+            let nodoBorrar = btn.parentElement.parentElement.parentElement;
+            console.log(nodoBorrar);
+            if (botonTarjetaB) {
+                nodoBorrar.removeChild(btn.parentElement.parentElement);
+                biblAlimento.splice(0,1);
+                
+            }
+            enviarALs(biblAlimento);
+        })
+    })
 }
 //se repite function para crear tarjetas de LS
 function crearHtmlIndex(arr) {
@@ -76,10 +94,12 @@ function crearHtmlIndex(arr) {
       });
     }
 }
+
 //function para enviar a LS los alimentos
 function enviarALs(arr) {
     localStorage.setItem("biblAlimentos", JSON.stringify(arr));
 }
+
 //Para que no se borren las tarjetas al recargar la página
 document.addEventListener("DOMContentLoaded", () => {
     const biblAlimento = JSON.parse(localStorage.getItem("biblAlimentos")) || [];

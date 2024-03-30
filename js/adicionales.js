@@ -11,23 +11,37 @@ const saludos = [
   "¡Vos de nuevo! ¿Unas hamburguesitas o que?",
   "¡Hey, qué tal! ¿Qué va a ser la estrella del menú hoy?",
 ];
-  
-const bienvenida = [
-  'bienvenido/a',
-  'a',
-  'tu',
-  'biblioteca',
-  'personal',
-];
-let saludoInicio = document.querySelector("#titulo");
+let saludoInicio = document.querySelector("#titulo h1");
+let bienvenidaBiblio = document.querySelector("#tituloBiblio h1");
 
 let saludo = "";
+const bienvenida = [
+  'bienvenid@ ',
+  ' a ',
+  ' tu ',
+  ' biblioteca ',
+  ' personal',
+];
+
+//bienvenida en biblioteca
+for (let i = 0; i < bienvenida.length; i++) {
+  setTimeout(() => {
+    bienvenidaBiblio.innerText=bienvenidaBiblio.innerText + bienvenida[i] ;
+  }, i * 1000);
+
+}
+
+//bienvenida en Index
   for (let i = 0; i < 1; i++) {
      let random = Math.round(Math.random() * saludos.length)
      saludo = saludo + saludos[random]
   }
-  saludoInicio.innerText = saludo //+ saludoUsuario;
+  saludoInicio.innerText = saludo 
   //Fin saludo bienvenida
+
+  //saludo biblioteca
+
+   //Fin saludo biblioteca
 
   // const linkBiblioteca = document.getElementById("linkBiblioteca");
 

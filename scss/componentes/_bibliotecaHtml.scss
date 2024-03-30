@@ -17,7 +17,10 @@
     margin-bottom: 3%;
     h1{
         color: #202132;
-        font-size: 18px;
+        font-size: 25px;
+        background-color: #8789C0;
+        border-radius: 10px;
+        padding: 5px; 
     }
     h2{
         color: #202132;
@@ -26,6 +29,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: 1s;
+        &:hover{
+            border: 2px solid #202132;
+            transition: 3s;
+            border-radius: 20px;
+        }
         a{
             text-decoration-line: none;
             text-decoration: none;
@@ -67,5 +76,4 @@
         }
     }
 }
-
 

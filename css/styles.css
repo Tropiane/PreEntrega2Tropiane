@@ -343,14 +343,22 @@ footer ul {
   margin-bottom: 3%; }
   #tituloBiblio h1 {
     color: #202132;
-    font-size: 18px; }
+    font-size: 25px;
+    background-color: #8789C0;
+    border-radius: 10px;
+    padding: 5px; }
   #tituloBiblio h2 {
     color: #202132;
     border-bottom: 1px solid rgba(255, 255, 255, 0.596);
     margin-right: 5px;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    transition: 1s; }
+    #tituloBiblio h2:hover {
+      border: 2px solid #202132;
+      transition: 3s;
+      border-radius: 20px; }
     #tituloBiblio h2 a {
       text-decoration-line: none;
       text-decoration: none;
