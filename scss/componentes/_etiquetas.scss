@@ -141,8 +141,31 @@ nav{
                 }
             }
         }
-    
     }
+.lsBiblioteca{
+    .tarjetaB{
+        h3{
+            color: #F4F1DE;
+            font-size: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 10px;
+        }
+        ul{
+            border: none;
+            list-style: none;
+            padding: 5px;
+            text-align: left;
+            li{
+                color: #F4F1DE;
+                text-align: left;
+                font-size: 12px;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
 
 
 //Creación de alimentos por el usuario

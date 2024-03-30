@@ -3,7 +3,6 @@
   const añadirTarjeta = document.querySelectorAll("#tarjetaAlimentos button");
   const btnEnTarjeta = añadirTarjeta[0];
   const tarjetaAlimentos = document.querySelector(".tarjeta");
-  const tarjetasBiblio = document.querySelector(".tarjetasBiblio");
 
   //Solicitamos Search
   const inputBuscador = document.querySelector("#buscarHtml");

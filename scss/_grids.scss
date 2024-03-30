@@ -34,7 +34,7 @@ body{
             grid-template-areas: 
             "crear buscador"
             "biblioteca tarjetas"
-            "biblioteca tarjetas"
+            "biblioteca lsBiblioteca"
             ;
             .buscar{
                 grid-area: buscador;
@@ -42,6 +42,9 @@ body{
             }
             .tarjetas{
                 grid-area: tarjetas;
+            }
+            .lsBiblioteca{
+                grid-area: lsBiblioteca;
             }
             .comidasDia{
                 grid-area: biblioteca;
