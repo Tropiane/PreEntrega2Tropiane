@@ -112,18 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 btnAgregar.addEventListener("click", () => {
-        const nombre = inputNom.value;
-        const porcion = parseInt(inputGr.value);
-        const calorias = parseInt(inputCkal.value);
-        const nuevoAlimento = new construirAlimento(nombre, porcion, calorias);
-        
-        biblAlimento.push(nuevoAlimento);
-        //Enviamos datos a ListaAlimento
-        listaAlimentos.push(biblAlimento);
-        enviarALs(biblAlimento);
-        tarjetasHtml(biblAlimento);
+    const nombre = inputNom.value;
+    const porcion = parseInt(inputGr.value);
+    const calorias = parseInt(inputCkal.value);
+    const nuevoAlimento = new construirAlimento(nombre, porcion, calorias);
+    
+    biblAlimento.push(nuevoAlimento);
+    //Enviamos datos a ListaAlimento
+    listaAlimentos.push(biblAlimento);
+    enviarALs(biblAlimento);
+    tarjetasHtml(biblAlimento);
 });
-
 
 enviarALs(biblAlimento);
 crearHtmlIndex(biblAlimento)

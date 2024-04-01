@@ -1,5 +1,4 @@
-
-  //Boton en tarjetas
+//Boton en tarjetas
   const añadirTarjeta = document.querySelectorAll("#tarjetaAlimentos button");
   const btnEnTarjeta = añadirTarjeta[0];
   const tarjetaAlimentos = document.querySelector(".tarjeta");
@@ -16,9 +15,8 @@
   const API_URL = "../db/db.js";
 
   let listaAlimentos = [];
-    //Función para traer elementos desde DB
+    //Función para traer elementos desde DBs
 
-      
   //Función de búsqueda de alimentos
   function buscarAlimentos(arr, nombre) {
       const buscar = arr.find((elemento) => elemento.nombre.includes(nombre));
@@ -85,7 +83,6 @@
       });
   }
 
-  
   //Mostrar alimento en tarjeta "Alimento seleccionado"
     function mostrarAlimento(arr) {
         const traerUl = document.getElementById("ulTarjeta");
@@ -114,14 +111,11 @@
         });
     }
 
-
   //Buscar alimento
   inputBuscador.addEventListener("keyup", () => {
     const filtrados = filtroComida(listaAlimentos, inputBuscador.value);
     tarjetasHtml(filtrados);
 });
-
-
 
 async function getData(url) {
     const response = await fetch(url);

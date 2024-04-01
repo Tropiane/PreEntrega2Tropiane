@@ -451,7 +451,8 @@ footer ul {
   padding: 10px; }
   #alimentosBiblioteca .tarjetasBiblioteca {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    flex-wrap: wrap; }
     #alimentosBiblioteca .tarjetasBiblioteca ul {
       margin: 10px;
       padding: 5px;
