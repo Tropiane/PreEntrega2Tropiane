@@ -4,15 +4,28 @@
 #titulo{
     h1{
         color: #202132;
-        font-size: 18px;
+        font-size: 21px;
     }
     h2{
         color: #202132;
         border-bottom: 1px solid rgba(255, 255, 255, 0.596);
+        border-radius: 20px;
         margin-right: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: 1s;
+        &:hover{
+            border: 2px solid #202132;
+            transition: 0.5s;
+            border-radius: 20px;
+            padding: 5px;
+        }
+        a{
+            text-decoration-line: none;
+            text-decoration: none;
+            color: #202132;
+        }
         img{
             height: 40px;
             background-color: #202132;
@@ -32,14 +45,17 @@ nav{
             a{
                 text-decoration-line: none;
                 color: #F4F1DE;
-                font-size: 14px;
+                font-size: 18px;
                 font-weight: 700;
+                &:hover{
+                    background-color: #f4f1dea1;
+                    padding: 5px;
+                    transition: 0.3s;
+                    border-radius: 10px;
+                }
             }
             a:active{
-                background-color: #f4f1dea1;
-                padding: 5px;
-                transition: 0.3s;
-                border-radius: 10px;
+                border: 1px solid #202132;
             }
         }
     }
@@ -63,9 +79,9 @@ nav{
     }
     input{
         background-color: #F4F1DE;
-        box-shadow: -70px 64px 92px -41px rgba(135,137,192,1);
         font-weight: 700;
-        width: 200px;
+        font-size: 18px;
+        width: auto;
         height: 30px;
         border-radius: 0px 10px 10px 0px;
         margin: 10px 20px
@@ -75,11 +91,11 @@ nav{
 //Tarjeta Alimentos Seleccionados
 .comidasDia{
     p{
-        border: 1px solid #202132;
-        width: 250px;
+        border: 2px solid #8789C0;
+        width: auto;
+        padding: 5px;
         margin-top: 10px;
         border-radius: 10px;
-        font-size: 14px;
     }
     .tarjetaComidasDia{
         width: auto;
@@ -87,7 +103,6 @@ nav{
             color: #202132;
             text-transform: uppercase;
             border-bottom: 2px solid #202132;
-            font-size: 18px;
         }
         ul{
             list-style: none;
@@ -110,7 +125,6 @@ nav{
             }  
             }
             p{
-                font-size: 15px;
                 text-align: right;
                 position:static;
                 
@@ -123,7 +137,7 @@ nav{
     #tarjetaAlimentos{
             h3{
                 color: #F4F1DE;
-                font-size: 15px;
+                font-size: 18px;
                 text-align: center;
                 text-transform: uppercase;
                 margin: 10px;
@@ -135,7 +149,7 @@ nav{
                 li{
                     color: #F4F1DE;
                     text-align: left;
-                    font-size: 12px;
+                    font-size: 15px;
                     border-radius: 5px;
                     border-bottom: 1px solid 202132;
                 }
@@ -146,7 +160,7 @@ nav{
     .tarjetaB{
         h3{
             color: #F4F1DE;
-            font-size: 15px;
+            font-size: 18px;
             text-align: center;
             text-transform: uppercase;
             margin: 10px;
@@ -159,7 +173,7 @@ nav{
             li{
                 color: #F4F1DE;
                 text-align: left;
-                font-size: 12px;
+                font-size: 15px;
                 border-radius: 5px;
             }
         }
@@ -174,28 +188,36 @@ nav{
         form{
             border: 2px solid #202132;
             border-radius: 12px;
+            width: 350px;
         }
         p{
             color: #202132;
             text-align: center;
-            width: 250px;
-            font-size: 13px;
+            width: auto;
         }
         input{
             background: #8789c08c;
             color: #202132;
-            width: 200px;
+            width: 210px;
             height: 30px;
             border-radius: 0px 10px 10px 0px;
-            margin: 10px 20px
+            margin: 10px 0px;
+            font-size: 15px;
         }
         button{
             width: 250px;
+            height: 30px;
             border-radius: 0px 0px 10px 10px ;
             color: #F4F1DE;
+            font-size: 16px;
             font-weight: bold;
             background-image: linear-gradient(#08203e, #557c93);
-            transition: 0.1s;
+            transition: 0.5s;
+            margin: 10px 0px;
+                &:active{
+                    background-image: linear-gradient(#08203ebb, #557c93a2);
+                    padding: 10px;
+                }
         }
 
     }
@@ -206,6 +228,10 @@ footer{
         list-style: none;
         li{
             display: inline;
+            a{
+            text-decoration: none;
+            color: #F4F1DE;
+            }
         }
     }
 }

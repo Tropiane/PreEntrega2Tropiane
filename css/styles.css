@@ -2,8 +2,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+  padding: 0; }
 
 body {
   margin: 0;
@@ -17,6 +16,47 @@ body {
     background-color: #202132;
     color: #F4F1DE;
     border-radius: 10px 0px 0px 0px; }
+  body p {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px; }
+  body h1 {
+    font-family: "Bree Serif", serif;
+    font-weight: 400;
+    font-style: normal; }
+  body h2 {
+    font-family: "Bree Serif", serif;
+    font-weight: 400;
+    font-style: normal; }
+  body h3 {
+    font-family: "Bree Serif", serif;
+    font-weight: 400;
+    font-style: normal; }
+  body h4 {
+    font-family: "Bree Serif", serif;
+    font-weight: 400;
+    font-style: normal; }
+  body li {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px; }
+  body a {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal; }
+  body input {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: normal; }
+  body button {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal; }
 
 body {
   display: grid;
@@ -48,9 +88,9 @@ body {
     flex-direction: row;
     grid-area: main;
     display: grid;
-    grid-template-columns: 20%, 80%;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: "crear buscador" "biblioteca tarjetas" "biblioteca lsBiblioteca"; }
+    grid-template-columns: 40%, 60%;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "buscador buscador" "biblioteca tarjetas" "crear lsBiblioteca"; }
     body section main .buscar {
       grid-area: buscador;
       display: flex;
@@ -81,7 +121,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 220px;
+  width: auto;
   height: auto;
   margin: 10px 5px 0px 0px;
   border-radius: 10px 10px;
@@ -97,7 +137,7 @@ body {
     flex-wrap: wrap;
     background-color: #202132;
     border-radius: 30px 0px 0px 30px;
-    border: 2px solid white; }
+    border: 2px solid #F4F1DE; }
     .tarjetas #tarjetaAlimentos .tarjeta {
       height: 150px;
       width: auto;
@@ -110,14 +150,14 @@ body {
       .tarjetas #tarjetaAlimentos .tarjeta .btnTarjeta {
         height: 25px;
         width: auto;
-        font-size: 12px;
+        font-size: 15px;
         border-radius: 5px;
         color: #F4F1DE;
         font-weight: bold;
         background-image: linear-gradient(#08203e, #557c93);
         transition: 0.1s; }
       .tarjetas #tarjetaAlimentos .tarjeta .btnTarjeta:active {
-        font-size: 11px;
+        font-size: 13px;
         background-image: linear-gradient(#145277, #83d0cb);
         transition: 0.2s; }
 
@@ -138,7 +178,7 @@ body {
       border-radius: 10px;
       margin: 10px;
       width: 250px;
-      border: 1px solid white; }
+      border: 1px solid #F4F1DE; }
       .lsBiblioteca #tarjetasBiblio .tarjetaB .btnTarjeta {
         height: 25px;
         width: auto;
@@ -174,14 +214,25 @@ body {
 
 #titulo h1 {
   color: #202132;
-  font-size: 18px; }
+  font-size: 21px; }
 #titulo h2 {
   color: #202132;
   border-bottom: 1px solid rgba(255, 255, 255, 0.596);
+  border-radius: 20px;
   margin-right: 5px;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  transition: 1s; }
+  #titulo h2:hover {
+    border: 2px solid #202132;
+    transition: 0.5s;
+    border-radius: 20px;
+    padding: 5px; }
+  #titulo h2 a {
+    text-decoration-line: none;
+    text-decoration: none;
+    color: #202132; }
   #titulo h2 img {
     height: 40px;
     background-color: #202132;
@@ -194,13 +245,15 @@ nav ul {
   nav ul li a {
     text-decoration-line: none;
     color: #F4F1DE;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700; }
+    nav ul li a:hover {
+      background-color: #f4f1dea1;
+      padding: 5px;
+      transition: 0.3s;
+      border-radius: 10px; }
   nav ul li a:active {
-    background-color: #f4f1dea1;
-    padding: 5px;
-    transition: 0.3s;
-    border-radius: 10px; }
+    border: 1px solid #202132; }
 
 .buscar p {
   background-color: #8789c059;
@@ -215,26 +268,25 @@ nav ul {
     font-weight: bold; }
 .buscar input {
   background-color: #F4F1DE;
-  box-shadow: -70px 64px 92px -41px #8789c0;
   font-weight: 700;
-  width: 200px;
+  font-size: 18px;
+  width: auto;
   height: 30px;
   border-radius: 0px 10px 10px 0px;
   margin: 10px 20px; }
 
 .comidasDia p {
-  border: 1px solid #202132;
-  width: 250px;
+  border: 2px solid #8789C0;
+  width: auto;
+  padding: 5px;
   margin-top: 10px;
-  border-radius: 10px;
-  font-size: 14px; }
+  border-radius: 10px; }
 .comidasDia .tarjetaComidasDia {
   width: auto; }
   .comidasDia .tarjetaComidasDia h3 {
     color: #202132;
     text-transform: uppercase;
-    border-bottom: 2px solid #202132;
-    font-size: 18px; }
+    border-bottom: 2px solid #202132; }
   .comidasDia .tarjetaComidasDia ul {
     list-style: none;
     padding: 5px;
@@ -253,13 +305,12 @@ nav ul {
       background-color: #202132;
       color: #F4F1DE; }
   .comidasDia .tarjetaComidasDia p {
-    font-size: 15px;
     text-align: right;
     position: static; }
 
 .tarjetas #tarjetaAlimentos h3 {
   color: #F4F1DE;
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
   text-transform: uppercase;
   margin: 10px; }
@@ -270,13 +321,13 @@ nav ul {
   .tarjetas #tarjetaAlimentos ul li {
     color: #F4F1DE;
     text-align: left;
-    font-size: 12px;
+    font-size: 15px;
     border-radius: 5px;
     border-bottom: 1px solid 202132; }
 
 .lsBiblioteca .tarjetaB h3 {
   color: #F4F1DE;
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
   text-transform: uppercase;
   margin: 10px; }
@@ -288,38 +339,48 @@ nav ul {
   .lsBiblioteca .tarjetaB ul li {
     color: #F4F1DE;
     text-align: left;
-    font-size: 12px;
+    font-size: 15px;
     border-radius: 5px; }
 
 .añadirAlimento {
   margin: 2px; }
   .añadirAlimento form {
     border: 2px solid #202132;
-    border-radius: 12px; }
+    border-radius: 12px;
+    width: 350px; }
   .añadirAlimento p {
     color: #202132;
     text-align: center;
-    width: 250px;
-    font-size: 13px; }
+    width: auto; }
   .añadirAlimento input {
     background: #8789c08c;
     color: #202132;
-    width: 200px;
+    width: 210px;
     height: 30px;
     border-radius: 0px 10px 10px 0px;
-    margin: 10px 20px; }
+    margin: 10px 0px;
+    font-size: 15px; }
   .añadirAlimento button {
     width: 250px;
+    height: 30px;
     border-radius: 0px 0px 10px 10px;
     color: #F4F1DE;
+    font-size: 16px;
     font-weight: bold;
     background-image: linear-gradient(#08203e, #557c93);
-    transition: 0.1s; }
+    transition: 0.5s;
+    margin: 10px 0px; }
+    .añadirAlimento button:active {
+      background-image: linear-gradient(#08203ebb, #557c93a2);
+      padding: 10px; }
 
 footer ul {
   list-style: none; }
   footer ul li {
     display: inline; }
+    footer ul li a {
+      text-decoration: none;
+      color: #F4F1DE; }
 
 #tituloBiblio {
   grid-area: titulo;
@@ -347,6 +408,7 @@ footer ul {
   #tituloBiblio h2 {
     color: #202132;
     border-bottom: 1px solid rgba(255, 255, 255, 0.596);
+    border-radius: 20px;
     margin-right: 5px;
     display: flex;
     align-items: center;
@@ -354,8 +416,9 @@ footer ul {
     transition: 1s; }
     #tituloBiblio h2:hover {
       border: 2px solid #202132;
-      transition: 3s;
-      border-radius: 20px; }
+      transition: 0.5s;
+      border-radius: 20px;
+      padding: 5px; }
     #tituloBiblio h2 a {
       text-decoration-line: none;
       text-decoration: none;
@@ -365,9 +428,27 @@ footer ul {
       background-color: #202132;
       border-radius: 50%; }
 
+#infoBiblio {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #infoBiblio p {
+    background-color: #8789c079;
+    width: 1300px;
+    border-radius: 15px;
+    padding: 5px;
+    border: 2px solid #8789C0; }
+    #infoBiblio p span {
+      font-weight: bold;
+      color: #8789C0; }
+
 #alimentosBiblioteca {
   grid-area: main;
-  display: flex; }
+  display: flex;
+  border: 1px solid #202132;
+  width: 1fr;
+  border-radius: 13px;
+  padding: 10px; }
   #alimentosBiblioteca .tarjetasBiblioteca {
     display: flex;
     flex-direction: row; }
@@ -377,14 +458,29 @@ footer ul {
       list-style: none;
       border: 2px solid #202132;
       border-radius: 18px;
-      transition: 1s; }
+      transition: 0.5s;
+      background-color: #8789c0; }
       #alimentosBiblioteca .tarjetasBiblioteca ul:hover {
-        transition: 1s;
-        border: 2px solid #8789C0;
-        border-radius: 10px 0px; }
+        transition: 0.3s;
+        border: 2px solid #202132;
+        padding: 8px; }
       #alimentosBiblioteca .tarjetasBiblioteca ul li {
-        text-align: left; }
+        text-align: left;
+        border-bottom: 1px solid #F4F1DE;
+        border-radius: 10px 0px; }
       #alimentosBiblioteca .tarjetasBiblioteca ul button {
-        transition: 0.5s; }
+        transition: 0.5s;
+        border: 1px solid #202132;
+        color: #F4F1DE;
+        border-radius: 5px;
+        background-color: transparent;
+        padding: 8px;
+        margin-top: 15px;
+        font-weight: bold; }
+        #alimentosBiblioteca .tarjetasBiblioteca ul button:active {
+          border: 2px solid #202132;
+          padding: 5px;
+          color: #202132;
+          background-color: red; }
 
 /*# sourceMappingURL=styles.css.map */

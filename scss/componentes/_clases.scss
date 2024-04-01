@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        width: 220px;
+        width: auto;
         height: auto;
         margin: 10px 5px 0px 0px;
         border-radius: 10px 10px;
@@ -31,7 +31,7 @@
         flex-wrap: wrap;
         background-color: #202132;
         border-radius: 30px 0px 0px 30px;
-        border: 2px solid white;
+        border: 2px solid #F4F1DE;
 
         .tarjeta{
             height: 150px;
@@ -46,7 +46,7 @@
                 .btnTarjeta{
                     height: 25px;
                     width: auto;
-                    font-size: 12px;
+                    font-size: 15px;
                     border-radius: 5px;
                     color: #F4F1DE;
                     font-weight: bold;
@@ -54,7 +54,7 @@
                     transition: 0.1s;
                 }
                 .btnTarjeta:active{
-                    font-size: 11px;
+                    font-size: 13px;
                     background-image: linear-gradient(#145277, #83d0cb);
                     transition: 0.2s;
                 }
@@ -79,7 +79,7 @@
         border-radius: 10px;
         margin: 10px;
         width: 250px;
-        border: 1px solid white;
+        border: 1px solid #F4F1DE;
         //Estilos de botones en Tarjetas de Alimentos
             .btnTarjeta{
                 height: 25px;

@@ -25,6 +25,7 @@
     h2{
         color: #202132;
         border-bottom: 1px solid rgba(255, 255, 255, 0.596);
+        border-radius: 20px;
         margin-right: 5px;
         display: flex;
         align-items: center;
@@ -32,8 +33,9 @@
         transition: 1s;
         &:hover{
             border: 2px solid #202132;
-            transition: 3s;
+            transition: 0.5s;
             border-radius: 20px;
+            padding: 5px;
         }
         a{
             text-decoration-line: none;
@@ -48,9 +50,30 @@
     }
 }
 
+#infoBiblio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        background-color: #8789c079;
+        width: 1300px;
+        border-radius: 15px;
+        padding: 5px;
+        border: 2px solid #8789C0;
+        span{
+            font-weight: bold;
+            color: #8789C0;
+        }
+    }
+}
+
 #alimentosBiblioteca{
     grid-area: main;
     display: flex;
+    border: 1px solid #202132;
+    width: 1fr;
+    border-radius: 13px;
+    padding: 10px;
     .tarjetasBiblioteca{
         display: flex;
         flex-direction: row;
@@ -60,18 +83,33 @@
             list-style: none;
             border: 2px solid #202132;
             border-radius: 18px;
-            transition: 1s;
+            transition: 0.5s;
+            background-color: #8789c0;
                 &:hover{
-                    transition: 1s;
-                    border: 2px solid #8789C0;
-                    border-radius: 10px 0px;
+                    transition: 0.3s;
+                    border: 2px solid #202132;
+                    padding: 8px;
                 }
             li{
                 text-align: left;
+                border-bottom: 1px solid #F4F1DE;
+                border-radius: 10px 0px;
             }
             button{
                 transition: 0.5s;
-
+                border: 1px solid #202132;
+                color: #F4F1DE;
+                border-radius: 5px;
+                background-color: transparent;
+                padding: 8px;
+                margin-top: 15px;
+                font-weight: bold;
+                &:active{
+                    border: 2px solid #202132;    
+                    padding: 5px;
+                    color: #202132;
+                    background-color: red;
+                }
             }
         }
     }
